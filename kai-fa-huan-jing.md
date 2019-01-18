@@ -1,0 +1,46 @@
+# 開發環境
+
+---
+
+* 程式語言:
+
+  * Node.js
+    * version: 8.10.0
+
+* IDE: [Visual Studio Code](https://code.visualstudio.com/)
+
+  * Pulgin
+
+    * [StandardJS - JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
+
+      * 使用Semi-Standard Style, 可同時驗證.Vue檔案可參考此[說明](https://wdd.js.org/vscode-vue-standardjs.html)設定Setting.json
+
+      ```
+      npm i -g semistandard
+      npm i -g eslint-plugin-html@3.2.2
+      npm i -g eslint
+      ```
+
+    * [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+
+    * [Hyper JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=t7yang.hyper-javascript-snippets)
+
+    * [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+
+* 開發相關工具
+
+  * 程式碼版本管理工具: [Git](https://gitforwindows.org/)
+    * GUI Tool
+      * [tortoisegit](https://tortoisegit.org/)
+      * [SourceTree](https://www.sourcetreeapp.com/)
+  * Node.js版本管理工具: [nvm](https://github.com/coreybutler/nvm-windows)
+    * [教學](https://oranwind.org/nvm-windows/)
+  * command-line工具: [cmder](http://cmder.net/)
+    * [教學](https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx)
+  * Linux遠端連線工具: [MobaXterm](https://mobaxterm.mobatek.net/)
+  * MongoDB GUI 工具: [Robo mongo \(Robo 3T\)](https://robomongo.org/download)
+  * PostgreSQL GUI 工具: [PgAdmin 4](https://www.pgadmin.org/download/)
+  * Cloud Foundry command-line工具: [cf-cli](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+
+
+
