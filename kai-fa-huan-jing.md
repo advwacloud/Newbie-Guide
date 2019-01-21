@@ -13,13 +13,41 @@
 
     * [StandardJS - JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
 
-      * 使用Semi-Standard Style, 可同時驗證.Vue檔案可參考此[說明](https://wdd.js.org/vscode-vue-standardjs.html)設定Setting.json
+      * 使用Semi-Standard Style, 可同時驗證.Vue檔案可參考以下設定, 或參考[說明](https://wdd.js.org/vscode-vue-standardjs.html)
+        * 安裝相關套件
 
-      ```
-      npm i -g semistandard
-      npm i -g eslint-plugin-html@3.2.2
-      npm i -g eslint
-      ```
+        ```
+        npm i -g semistandard
+        npm i -g eslint-plugin-html@3.2.2
+        npm i -g eslint
+        ```
+
+        * 修改VSCode的Workspace setting.json
+
+        ```
+        {
+          "vetur.validation.template": false,
+          "semistandard.autoFixOnSave": true,
+          "javascript.validate.enable": false,
+          "standard.semistandard": true,
+          "standard.validate": [
+            "javascript",
+            "javascriptreact",
+            {
+              "language": "vue",
+              "autoFix":true
+            }
+          ],
+          "standard.options": {
+            "plugin":["html"]
+          },
+          "standard.autoFixOnSave": true,
+          "files.associations": {
+            "*.vue":"vue"
+          },  
+        }
+
+        ```
 
     * [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 
