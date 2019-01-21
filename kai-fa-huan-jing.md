@@ -14,6 +14,7 @@
     * [StandardJS - JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
 
       * 使用Semi-Standard Style, 可同時驗證.Vue檔案可參考以下設定, 或參考[說明](https://wdd.js.org/vscode-vue-standardjs.html)
+
         * 安裝相關套件
 
         ```
@@ -46,7 +47,6 @@
             "*.vue":"vue"
           },  
         }
-
         ```
 
     * [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
