@@ -5,7 +5,7 @@
 * 程式語言:
 
   * Node.js
-    * version: 8.10.0
+    * version: 10.16.0
 
 * IDE: [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -70,7 +70,9 @@
       * 當開發新需求時，就是使用 Feature \(名稱可自定或是定為需求名稱\)分支。Feature 分支都是從 Develop 分支來的，完成之後會再併回 Develop 分支，合併後即可將該分支移除。
 
   * Node.js版本管理工具: [nvm](https://github.com/coreybutler/nvm-windows)
+
     * [教學](https://oranwind.org/nvm-windows/)
+
   * command-line工具: [cmder](http://cmder.net/)
     * [教學](https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx)
   * Linux遠端連線工具: [MobaXterm](https://mobaxterm.mobatek.net/)
