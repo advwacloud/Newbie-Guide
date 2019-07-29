@@ -1,12 +1,8 @@
-# 開發環境
+# 開發環境 - Node.js
 
 ---
 
-* 程式語言:
-
-  * Node.js
-    * version: 10.16.0
-
+* Version: 10.16.0
 * IDE: [Visual Studio Code](https://code.visualstudio.com/)
 
   * Pulgin
