@@ -6,21 +6,56 @@
 
   * [https://harbor.wise-paas.io](https://harbor.wise-paas.io/)
 
-* 開發相關工具
+### Kubectl
+- 下載kubectl.exe, 從這裡載 (https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows), 放置於任意位置, ex. C:\Users\boshen.chen\Documents\k8s
 
-  * kubectl
+![](/assets/kubectlpath.png)
+- 在環境變數Path加入kubectl所在目錄
+![](/assets/kubectlpathenv_mask.png)
+- 使用cluster config, 這會是k8s team給我們的, 讓kubectl可以跟遠端環境互動, 該config會長的像這樣
 
-    * 簡介: [https://ithelp.ithome.com.tw/articles/10193502](https://ithelp.ithome.com.tw/articles/10193502)
-    * 安裝方式: 請從此[連結](https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/windows/amd64/kubectl.exe)下載最新版本, 並把kubectl.exe放到C:\kube目錄下, 然後到"環境變數"中設定PATH, 可以參考[此篇](https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff)
+```
+apiVersion: v1
+kind: Config
+preferences: {}
 
-  * helm chart
-    * [https://helm.sh/docs/developing\_charts/](https://helm.sh/docs/developing_charts/)
+clusters:
+- cluster:
+  name: development
+- cluster:
+  name: scratch
 
-    * A chart is a collection of files that describe a related set of Kubernetes resources.
+users:
+- name: developer
+- name: experimenter
 
-* SCADA k8s deploy
+contexts:
+- context:
+  name: dev-frontend
+- context:
+  name: dev-storage
+- context:
+  name: exp-scratch
+```
 
-  * https://quip.com/JOcBAUvh70U0
+- 可以在current-context先設定好要用哪個namespace, 否則會使用default這個namespace
+
+```
+contexts:
+- context:
+    cluster: test
+    user: user
+    namespace: "scada-dev"
+  name: test
+current-context: test
+```
+- 最後則是在環境變數KUBECONFIG設定該config的位置, 要注意的是, 除了路徑, 要指定到檔名
+
+![](/assets/kubeconfig.PNG)
+
+
+- 都設定好後就可以使用kubectl來跟cluster互動了
+![](/assets/kubectlusage.PNG)
 
 
 
