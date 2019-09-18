@@ -7,7 +7,7 @@
   * [https://harbor.wise-paas.io](https://harbor.wise-paas.io/)
 
 ### Kubectl
-- 下載kubectl.exe, 從這裡載 (https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows), 放置於任意位置, ex. C:\Users\boshen.chen\Documents\k8s
+- 下載kubectl.exe, [從這裡載](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows), 放置於任意位置, ex. C:\Users\boshen.chen\Documents\k8s
 
 ![](/assets/kubectlpath.png)
 - 在環境變數Path加入kubectl所在目錄
