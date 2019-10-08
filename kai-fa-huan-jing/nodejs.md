@@ -24,7 +24,6 @@
         ```
         {
           "vetur.validation.template": false,
-          "semistandard.autoFixOnSave": true,
           "javascript.validate.enable": false,
           "standard.semistandard": true,
           "standard.validate": [
@@ -74,6 +73,7 @@
     * [教學](https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx)
 
   * Linux遠端連線工具: [MobaXterm](https://mobaxterm.mobatek.net/)
+
   * MongoDB GUI 工具: [Robo mongo \(Robo 3T\)](https://robomongo.org/download)
     * Local測試環境
       * host: PC031206
