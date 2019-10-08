@@ -40,7 +40,7 @@
           "standard.autoFixOnSave": true,
           "files.associations": {
             "*.vue":"vue"
-          },  
+          }  
         }
         ```
 
@@ -75,12 +75,14 @@
   * Linux遠端連線工具: [MobaXterm](https://mobaxterm.mobatek.net/)
 
   * MongoDB GUI 工具: [Robo mongo \(Robo 3T\)](https://robomongo.org/download)
+
     * Local測試環境
       * host: PC031206
       * port: 27017
       * username: wisepaas
       * password: wisepaas
       * database: WISE-PaaS
+
   * PostgreSQL GUI 工具: [PgAdmin 4](https://www.pgadmin.org/download/)
     * Local測試環境
       * host: PC031206
