@@ -15,32 +15,51 @@
 
         ```
         npm i -g semistandard@13.0.1    // avoid prefer-const rule
-        npm i -g eslint-plugin-html
+        npm i -g eslint-plugin-html@3.2.2
         npm i -g eslint
         ```
 
-        * 修改VSCode的Workspace setting.json
+        * 修改VSCode的User settings.json
 
         ```
         {
+          "editor.tabSize": 2,
           "vetur.validation.template": false,
           "javascript.validate.enable": false,
           "standard.semistandard": true,
-          "standard.validate": [
-            "javascript",
-            "javascriptreact",
+          "standard.autoFixOnSave": true,
+          "prettier.singleQuote": true,
+          "editor.formatOnSave": true,
+          "eslint.validate": [
+            {
+              "language": "javascript",
+              "autoFix": true
+            },
             {
               "language": "vue",
-              "autoFix":true
+              "autoFix": true
+            },
+            {
+              "language": "html",
+              "autoFix": true
             }
           ],
-          "standard.options": {
-            "plugin":["html"]
+          "vetur.format.defaultFormatterOptions": {
+            "prettier": {
+              "semi": true,
+              "singleQuote": true
+            },
+            "eslint.options": {
+              "plugins": [
+                "html"
+              ]
+            }
           },
-          "standard.autoFixOnSave": true,
+          "vetur.format.defaultFormatter.html": "prettier",
           "files.associations": {
-            "*.vue":"vue"
-          }  
+            "*.vue": "vue"
+          },
+          "window.zoomLevel": 1
         }
         ```
 
