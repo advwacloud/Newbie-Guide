@@ -14,7 +14,7 @@
         * 安裝相關套件
 
         ```
-        npm i -g semistandard
+        npm i -g semistandard@13.0.1    // avoid prefer-const rule
         npm i -g eslint-plugin-html@3.2.2
         npm i -g eslint
         ```
@@ -84,12 +84,14 @@
       * database: WISE-PaaS
 
   * PostgreSQL GUI 工具: [PgAdmin 4](https://www.pgadmin.org/download/)
+
     * Local測試環境
       * host: PC031206
       * port: 5432
       * username: postgres
       * password: admin
       * database: wisepaas
+
   * Cloud Foundry command-line工具: [cf-cli](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 
 
