@@ -15,7 +15,7 @@
 
         ```
         npm i -g semistandard@13.0.1    // avoid prefer-const rule
-        npm i -g eslint-plugin-html@3.2.2
+        npm i -g eslint-plugin-html
         npm i -g eslint
         ```
 
