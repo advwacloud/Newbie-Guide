@@ -107,3 +107,11 @@ flag="harbor.wise-paas.io/scada-dev/scada-dataworker:1.3.26-dev" \
 && sudo docker push $flag
 ```
 
+### 置換scada chart預設的image
+* 以scada chart@1.1.33為例, portal image版本預設為1.3.33
+* 開發期間如果要改成其他image來測試, 只要換掉預設的image的repo和version即可
+```
+--set portal.image.repository=harbor.wise-paas.io/scada-dev/portal-scada ^
+--set portal.image.tag=1.3.33-dev ^
+```
+
