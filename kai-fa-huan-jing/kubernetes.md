@@ -57,5 +57,13 @@ current-context: test
 - 都設定好後就可以使用kubectl來跟cluster互動了
 ![](/assets/kubectlusage.PNG)
 
+### Helm
+* 安裝Chocolatey, 這是一款Windows的套件管理工具,安裝方式請參考這裡 (https://chocolatey.org/install#installing-chocolatey)
+* 安裝好Chocolatey之後, 執行這行指令, 即可安裝helm
+```
+choco install kubernetes-helm
+```
+
+
 
 
