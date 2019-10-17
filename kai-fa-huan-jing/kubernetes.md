@@ -45,7 +45,8 @@ current-context: test
 
 ### Helm
 
-* 安裝Chocolatey, 這是一款Windows的套件管理工具,安裝方式請參考這裡 \([https://chocolatey.org/install\#installing-chocolatey](https://chocolatey.org/install#installing-chocolatey)\)
+* 安裝Chocolatey, 這是一款Windows的套件管理工具,[安裝方式請參考這裡](https://chocolatey.org/docs/installation#install-with-cmdexe)
+  * 我是用cmd去裝，要使用管理者權限去開cmd
 * 安裝好Chocolatey之後, 執行這行指令, 即可安裝helm
   ```
   choco install kubernetes-helm
