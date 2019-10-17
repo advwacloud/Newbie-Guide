@@ -90,3 +90,6 @@ helm install scada/scada --name scada --username {USERNAME} --password {PASSWORD
 * 部署成功後, 可以透過 `helm status scada` 來查看結果
 ![](/assets/helmstatus.PNG)
 
+### 手動build測試用的image到habor
+
+
