@@ -63,7 +63,30 @@ current-context: test
 ```
 choco install kubernetes-helm
 ```
-
-
-
+* 安裝好後, 可以用helm ls簡單測試一下
+![](/assets/helmls.PNG)
+* 新增harbor chart repo
+```
+helm repo add --username {USERNAME} --password {PASSWORD} scada https://harbor.wise-paas.io/chartrepo/scada
+```
+* 透過chart部署scada portal/worker到k8s cluster上 (以下指令是Win cmd用的)
+```
+(
+helm install scada/scada --name scada --username {USERNAME} --password {PASSWORD} --version 1.1.31 ^
+--set ingress.hosts={portal-scada-develop.ensaas190920104500.wise-paas.com.cn} ^
+--set portal.resources.requests.cpu=100m ^
+--set worker.resources.requests.cpu=100m ^
+--set imageCredentials.username={USERNAME} ^
+--set imageCredentials.password={PASSWORD} ^
+--set envs.org_name=EnSaaS-190826113 ^
+--set envs.org_id=a7928e16-cfdc-4e92-8130-7b316851af30 ^
+--set envs.space_name=scada ^
+--set envs.space_id=75a5b889-c89d-11e9-bcc4-52df743a3a14 ^
+--set envs.application_id=apppppp-pppp-pppp3-44444 ^
+--set envs.sso_url="https://portal-sso.wise-paas.com.cn" ^
+--set envs.dccs_url="https://api-dccs-190826113000.wise-paas.com.cn"
+)
+```
+* 部署成功後, 可以透過 `helm status scada` 來查看結果
+![](/assets/helmstatus.PNG)
 
