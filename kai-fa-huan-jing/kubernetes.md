@@ -72,24 +72,38 @@ helm repo add --username {USERNAME} --password {PASSWORD} scada https://harbor.w
 * 透過chart部署scada portal/worker到k8s cluster上 (以下指令是Win cmd用的)
 ```
 (
-helm install scada/scada --name scada --username {USERNAME} --password {PASSWORD} --version 1.1.31 ^
---set ingress.hosts={portal-scada-develop.ensaas190920104500.wise-paas.com.cn} ^
---set portal.resources.requests.cpu=100m ^
---set worker.resources.requests.cpu=100m ^
+helm install scada/scada --name scada --username {USERNAME} --password {PASSWORD} --version 1.1.33 ^
 --set imageCredentials.username={USERNAME} ^
 --set imageCredentials.password={PASSWORD} ^
---set envs.org_name=EnSaaS-190826113 ^
---set envs.org_id=a7928e16-cfdc-4e92-8130-7b316851af30 ^
+--set portal.resources.requests.cpu=100m ^
+--set worker.resources.requests.cpu=100m ^
+--set ingress.hosts={portal-scada-develop.ensaas190920104500.wise-paas.com.cn} ^
+--set envs.org_name=EnSaaS-190903164 ^
+--set envs.org_id=53a7c740-a5c4-4d9e-ac81-38537baf745b ^
 --set envs.space_name=scada ^
---set envs.space_id=75a5b889-c89d-11e9-bcc4-52df743a3a14 ^
+--set envs.space_id=9a965c63-507f-49fc-8f82-7e63e22e282c ^
 --set envs.application_id=apppppp-pppp-pppp3-44444 ^
---set envs.sso_url="https://portal-sso.wise-paas.com.cn" ^
---set envs.dccs_url="https://api-dccs-190826113000.wise-paas.com.cn"
+--set envs.sso_url="https://portal-sso-ensaas-operation-hk.jx.wise-paas.com.cn" ^
+--set envs.dccs_url="https://api-dccs-ensaas-operation-hk.jx.wise-paas.com.cn"
 )
 ```
 * 部署成功後, 可以透過 `helm status scada` 來查看結果
 ![](/assets/helmstatus.PNG)
 
 ### 手動build測試用的image到habor
-
+* **勿將**手動build的image放倒scada repo, 而是要放到scada-dev repo
+* 172.22.2.57為我們的build machine, 大家可以上去產生自己測試用的docker image
+* clone專案後, 在專案根目錄執行以下命令即可產生docker image, 並上傳至harbor
+* scada portal test image
+```
+flag="harbor.wise-paas.io/scada-dev/portal-scada:1.3.33-dev" \
+&& sudo docker build -t=$flag --no-cache=true -f="./dockerfiles/localbuild.dockerfile" . \
+&& sudo docker push $flag
+```
+* scada worker test image
+```
+flag="harbor.wise-paas.io/scada-dev/scada-dataworker:1.3.26-dev" \
+&& sudo docker build -t=$flag --no-cache=true -f="./dockerfiles/localbuild.dockerfile" . \
+&& sudo docker push $flag
+```
 
