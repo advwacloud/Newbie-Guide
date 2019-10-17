@@ -50,7 +50,7 @@ current-context: test
   ```
   choco install kubernetes-helm
   ```
-* 安裝好後, 可以用helm ls簡單測試一下
+* 安裝好後, 可以用helm ls簡單測試一下, 也可以用`helm status {chart name}` 來測試
   ![](/assets/helmls.PNG)
 * 新增harbor chart repo
   ```
