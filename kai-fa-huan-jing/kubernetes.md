@@ -53,6 +53,7 @@ current-context: test
   ```
 * 安裝好後, 可以用helm ls簡單測試一下, 也可以用`helm status {chart name}` 來測試
   ![](/assets/helmls.PNG)
+* `helm init` 進行helm client/server初始化
 * 新增harbor chart repo
   ```
   helm repo add --username {USERNAME} --password {PASSWORD} scada https://harbor.wise-paas.io/chartrepo/scada
