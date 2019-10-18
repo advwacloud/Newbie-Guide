@@ -118,8 +118,30 @@ broker/class/plan是平台的人需要幫我們建好, 我們能操作的是建�
 
 假設我們要建立建立mongo的service instance和binding, 可以準備yaml檔, 配合kubectl去執行
 
+create-mongo-instance.yaml
 ```
-e
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceInstance
+metadata:
+  name: mongo-instance
+  namespace: scada-dev
+spec:
+  clusterServiceClassExternalName: mongodb-shared-broker
+  clusterServicePlanExternalName: Shared
+```
+`kubectl create -f create-mongo-instance.yaml`
+
+create-mongo-binding.yaml
+```
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceBinding
+metadata:
+  name: mongo-binding
+  namespace: scada-dev
+spec:
+  instanceRef:
+    name: mongo-instance
+  secretName: mongo-credential
 ```
 
 
