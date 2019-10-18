@@ -146,7 +146,6 @@ spec:
 `kubectl create -f create-mongo-binding.yaml`
 
 建立好mongo binding之後, secret也會一併建立好
-
 `kubectl get secret`
 ![](/assets/k8ssecretresult.PNG)
 
