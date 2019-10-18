@@ -106,5 +106,20 @@ current-context: test
   --set portal.image.tag=1.3.33-dev ^
   ```
 
+### K8S Services And Secret
+broker/class/plan是平台的人需要幫我們建好, 我們能操作的是建立service instance和servcie binding
+
+`kubectl get clusterservicebroker`
+![](/assets/svnbrokerresult.PNG)
+`kubectl get clusterserviceclass`
+![](/assets/svcclasresult.PNG)
+`kubectl get clusterserviceplan`
+![](/assets/svcplanresult.PNG)
+
+假設我們要建立建立mongo的service instance和binding, 可以準備yaml檔, 配合kubectl去執行
+
+```
+e
+```
 
 
