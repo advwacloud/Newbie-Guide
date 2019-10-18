@@ -152,7 +152,7 @@ spec:
 
 也可以透過kubectl直接看secert內容, secret都是以base64編碼
 `kubectl get secret mongo-credential -o yaml`
-![](/assets/secretmongo.PNG)
+![](/assets/secretmongo2.PNG)
 
 最後要介紹一下, k8s是如何將這些secret以環境變數的方式注入給app
 
