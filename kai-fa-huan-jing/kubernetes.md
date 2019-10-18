@@ -143,5 +143,26 @@ spec:
     name: mongo-instance
   secretName: mongo-credential
 ```
+`kubectl create -f create-mongo-binding.yaml`
 
+建立好mongo binding之後, secret也會一併建立好
 
+`kubectl get secret`
+![](/assets/k8ssecretresult.PNG)
+
+也可以透過kubectl直接看secert內容, secret都是以base64編碼
+`kubectl get secret mongo-credential -o yaml`
+![](/assets/secretmongo.PNG)
+
+最後要介紹一下, k8s是如何將這些secret以環境變數的方式注入給app
+
+chart deployment裡有一段是橋接secret和app環境變數
+
+```
+- name: MONGO_URI
+  valueFrom:
+    secretKeyRef:
+      name: mongo-credential
+      key: uri
+      optional: true
+```
