@@ -166,3 +166,5 @@ chart deployment裡有一段是橋接secret和app環境變數
       key: uri
       optional: true
 ```
+
+在scada portal裡就會以 `uri: process.env.MONGO_URI` 這種方式去接secret的uri
