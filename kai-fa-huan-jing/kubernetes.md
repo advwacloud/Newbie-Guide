@@ -150,6 +150,7 @@ spec:
 ![](/assets/k8ssecretresult.PNG)
 
 也可以透過kubectl直接看secert內容, secret都是以base64編碼
+
 `kubectl get secret mongo-credential -o yaml`
 ![](/assets/secretmongo2.PNG)
 
