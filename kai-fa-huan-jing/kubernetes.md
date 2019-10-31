@@ -9,10 +9,12 @@
   * [https://harbor.wise-paas.io](https://harbor.wise-paas.io/)
 
 * harbor project list
+
   * scada: **production **images/charts
   * notification: **production** images/charts
   * scada-dev: development images/charts
   * notification-dev: development images/charts
+
 * harbor rules
   * 測試用的image/chart一律上傳到\*-dev的project下, **請勿**將測試用的東西傳到正式project
 
@@ -66,15 +68,15 @@ current-context: test
 * `helm init` 進行helm client/server初始化
 * 新增harbor chart repo
   ```
-  helm repo add --username {USERNAME} --password {PASSWORD} scada https://harbor.wise-paas.io/chartrepo/scada
+  helm repo add --username USERNAME --password PASSWORD scada https://harbor.wise-paas.io/chartrepo/scada
   ```
 * 透過chart部署scada portal/worker到k8s cluster上 \(以下指令是Win cmd用的\)
 
   ```
   (
-  helm install scada/scada --name scada --username {USERNAME} --password {PASSWORD} --version 1.1.33 ^
-  --set imageCredentials.username={USERNAME} ^
-  --set imageCredentials.password={PASSWORD} ^
+  helm install scada/scada --name scada --username USERNAME --password PASSWORD --version 1.1.33 ^
+  --set imageCredentials.username=USERNAME ^
+  --set imageCredentials.password=PASSWORD ^
   --set portal.resources.requests.cpu=100m ^
   --set worker.resources.requests.cpu=100m ^
   --set ingress.hosts={portal-scada-develop.ensaas190920104500.wise-paas.com.cn} ^
@@ -94,7 +96,7 @@ current-context: test
   helm install scada/scada --name scada --username USERNAME --password PASSWORD --version 1.1.34 -f YOUR_VALUES.yaml
   ```
 
-* 部署成功後, 可以透過 `helm status scada` 來查看結果
+* 部署成功後, 可以透過 `helm status scada` 來查看結果  
   ![](/assets/helmstatus.PNG)
 
 ### 手動build測試用的image到habor
