@@ -16,6 +16,7 @@
   * notification-dev: development images/charts
 
 * harbor rules
+
   * 測試用的image/chart一律上傳到\*-dev的project下, **請勿**將測試用的東西傳到正式project
 
 ### Kubectl
@@ -79,14 +80,14 @@ current-context: test
   --set imageCredentials.password=PASSWORD ^
   --set portal.resources.requests.cpu=100m ^
   --set worker.resources.requests.cpu=100m ^
-  --set ingress.hosts={portal-scada-develop.ensaas190920104500.wise-paas.com.cn} ^
-  --set envs.org_name=EnSaaS-190903164 ^
-  --set envs.org_id=53a7c740-a5c4-4d9e-ac81-38537baf745b ^
+  --set ingress.hosts={portal-scada-url} ^
+  --set envs.org_name=EnSaaS-000000000 ^
+  --set envs.org_id=53a7c740-a5c4-1d9e-ac82-38537baf745c ^
   --set envs.space_name=scada ^
-  --set envs.space_id=9a965c63-507f-49fc-8f82-7e63e22e282c ^
+  --set envs.space_id=9a965c61-507f-49f2-8f82-7e63e22e282d ^
   --set envs.application_id=apppppp-pppp-pppp3-44444 ^
-  --set envs.sso_url="https://portal-sso-ensaas-operation-hk.jx.wise-paas.com.cn" ^
-  --set envs.dccs_url="https://api-dccs-ensaas-operation-hk.jx.wise-paas.com.cn"
+  --set envs.sso_url="https://sso.url" ^
+  --set envs.dccs_url="https://dccs.url"
   )
   ```
 
