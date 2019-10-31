@@ -76,6 +76,11 @@ current-context: test
   --set envs.dccs_url="https://api-dccs-ensaas-operation-hk.jx.wise-paas.com.cn"
   )
   ```
+  
+* 也可指定你希望的values.yaml去置換掉預設的values.yaml
+```
+helm install scada/scada --name scada --username USERNAME --password PASSWORD --version 1.1.34 -f YOUR_VALUES.yaml
+```
 * 部署成功後, 可以透過 `helm status scada` 來查看結果
   ![](/assets/helmstatus.PNG)
 
@@ -168,3 +173,8 @@ chart deployment裡有一段是橋接secret和app環境變數
 ```
 
 在scada portal裡就會以 `uri: process.env.MONGO_URI` 這種方式去接secret的uri
+
+### 常用指令
+- 停掉某個pod
+
+`kubectl scale --replicas=0 deployment/scada-worker`
