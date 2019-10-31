@@ -2,9 +2,19 @@
 
 ---
 
+### Repository
+
 * docker image hub & chart repo
 
   * [https://harbor.wise-paas.io](https://harbor.wise-paas.io/)
+
+* harbor project list
+  * scada: **production **images/charts
+  * notification: **production** images/charts
+  * scada-dev: development images/charts
+  * notification-dev: development images/charts
+* harbor rules
+  * 測試用的image/chart一律上傳到\*-dev的project下, **請勿**將測試用的東西傳到正式project
 
 ### Kubectl
 
@@ -59,6 +69,7 @@ current-context: test
   helm repo add --username {USERNAME} --password {PASSWORD} scada https://harbor.wise-paas.io/chartrepo/scada
   ```
 * 透過chart部署scada portal/worker到k8s cluster上 \(以下指令是Win cmd用的\)
+
   ```
   (
   helm install scada/scada --name scada --username {USERNAME} --password {PASSWORD} --version 1.1.33 ^
@@ -76,11 +87,13 @@ current-context: test
   --set envs.dccs_url="https://api-dccs-ensaas-operation-hk.jx.wise-paas.com.cn"
   )
   ```
-  
+
 * 也可指定你希望的values.yaml去置換掉預設的values.yaml
-```
-helm install scada/scada --name scada --username USERNAME --password PASSWORD --version 1.1.34 -f YOUR_VALUES.yaml
-```
+
+  ```
+  helm install scada/scada --name scada --username USERNAME --password PASSWORD --version 1.1.34 -f YOUR_VALUES.yaml
+  ```
+
 * 部署成功後, 可以透過 `helm status scada` 來查看結果
   ![](/assets/helmstatus.PNG)
 
@@ -112,18 +125,20 @@ helm install scada/scada --name scada --username USERNAME --password PASSWORD --
   ```
 
 ### K8S Services And Secret
+
 broker/class/plan是平台的人需要幫我們建好, 我們能操作的是建立service instance和servcie binding
 
-`kubectl get clusterservicebroker`
-![](/assets/svnbrokerresult.PNG)
-`kubectl get clusterserviceclass`
-![](/assets/svcclasresult.PNG)
-`kubectl get clusterserviceplan`
+`kubectl get clusterservicebroker`  
+![](/assets/svnbrokerresult.PNG)  
+`kubectl get clusterserviceclass`  
+![](/assets/svcclasresult.PNG)  
+`kubectl get clusterserviceplan`  
 ![](/assets/svcplanresult.PNG)
 
 假設我們要建立建立mongo的service instance和binding, 可以準備yaml檔, 配合kubectl去執行
 
 create-mongo-instance.yaml
+
 ```
 apiVersion: servicecatalog.k8s.io/v1beta1
 kind: ServiceInstance
@@ -134,9 +149,11 @@ spec:
   clusterServiceClassExternalName: mongodb-shared-broker
   clusterServicePlanExternalName: Shared
 ```
+
 `kubectl create -f create-mongo-instance.yaml`
 
 create-mongo-binding.yaml
+
 ```
 apiVersion: servicecatalog.k8s.io/v1beta1
 kind: ServiceBinding
@@ -148,15 +165,16 @@ spec:
     name: mongo-instance
   secretName: mongo-credential
 ```
+
 `kubectl create -f create-mongo-binding.yaml`
 
-建立好mongo binding之後, secret也會一併建立好
-`kubectl get secret`
+建立好mongo binding之後, secret也會一併建立好  
+`kubectl get secret`  
 ![](/assets/k8ssecretresult.PNG)
 
 也可以透過kubectl直接看secert內容, secret都是以base64編碼
 
-`kubectl get secret mongo-credential -o yaml`
+`kubectl get secret mongo-credential -o yaml`  
 ![](/assets/secretmongo2.PNG)
 
 最後要介紹一下, k8s是如何將這些secret以環境變數的方式注入給app
@@ -175,6 +193,8 @@ chart deployment裡有一段是橋接secret和app環境變數
 在scada portal裡就會以 `uri: process.env.MONGO_URI` 這種方式去接secret的uri
 
 ### 常用指令
-- 停掉某個pod
+
+* 停掉某個pod
 
 `kubectl scale --replicas=0 deployment/scada-worker`
+
