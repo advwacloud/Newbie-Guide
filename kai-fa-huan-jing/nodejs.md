@@ -28,7 +28,6 @@
           "javascript.validate.enable": false,
           "standard.semistandard": true,
           "standard.autoFixOnSave": true,
-          "prettier.singleQuote": true,
           "editor.formatOnSave": true,
           "eslint.validate": [
             {
@@ -44,18 +43,23 @@
               "autoFix": true
             }
           ],
+          "vetur.format.defaultFormatter.html": "js-beautify-html",
           "vetur.format.defaultFormatterOptions": {
-            "prettier": {
-              "semi": true,
-              "singleQuote": true
+            "js-beautify-html": {
+              "wrap_line_length": 200,
+              "wrap_attributes": "auto",
+              "end_with_newline": false,
             },
             "eslint.options": {
               "plugins": [
                 "html"
               ]
-            }
+            },
+            "prettier": {
+              "semi": true,
+              "singleQuote": true
+            },
           },
-          "vetur.format.defaultFormatter.html": "prettier",
           "files.associations": {
             "*.vue": "vue"
           },
