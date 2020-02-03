@@ -1,6 +1,6 @@
 # 開發環境 - k8s部署範例
 
-
+注意: 本篇chart username/password我都挖掉了, 要自己填上去
 
 
 ## Part 1 - 如果每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
@@ -52,7 +52,7 @@ portal:
       ephemeral-storage: 200M
   image:
     repository: harbor.arfa.wise-paas.com/scada-dev/portal-scada
-    tag: 1.3.39-dev
+    tag: 1.3.39-roydev
     pullPolicy: Always
 
 worker:
@@ -69,13 +69,13 @@ worker:
       ephemeral-storage: 200M
   image:
     repository: harbor.arfa.wise-paas.com/scada-dev/scada-dataworker
-    tag: 1.3.31-7481555-utility-f8dab8b
+    tag: 1.3.31-roydev
     pullPolicy: Always
 
 imageCredentials:
   registry: harbor.arfa.wise-paas.com
-  username: "boshen.chen"
-  password: "1qaz@WSX"
+  username: ""
+  password: ""
 
 nameOverride: ""
 fullnameOverride: ""
