@@ -10,15 +10,19 @@
 
 改完code (或pull完), 直接在專案根目錄跑指令, **指令可以一鍵做image+上傳到harbor**:
 
-**portal
-**flag="harbor.arfa.wise-paas.com/scada-dev/portal-scada:1.3.39-roydev" \
+**portal**
+```
+flag="harbor.arfa.wise-paas.com/scada-dev/portal-scada:1.3.39-roydev" \
 && sudo docker build -t=$flag --no-cache=true -f="./dockerfiles/localbuild.dockerfile" . \
 && sudo docker push $flag
+```
 
-**worker
-**flag="harbor.arfa.wise-paas.com/scada-dev/scada-dataworker:1.3.31-roydev" \
+**worker**
+```
+flag="harbor.arfa.wise-paas.com/scada-dev/scada-dataworker:1.3.31-roydev" \
 && sudo docker build -t=$flag --no-cache=true -f="./dockerfiles/localbuild.dockerfile" . \
 && sudo docker push $flag
+```
 
 
 ## Part 2 - 在本機helm註冊chart repo, 此步驟跑過一次就好
