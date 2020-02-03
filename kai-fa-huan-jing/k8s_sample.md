@@ -34,7 +34,18 @@ helm repo add --username harborUser --password harborPwd scada-dev https://harbo
 
 **標準流程: 去harbor找到要用的chart, 複製values內容, 修改值(ex. datacenter/cluster....)**
 
-但這裡直接提供範本, 只需要改image tag就好
+但這裡直接提供範本, 再根據需求修改一些欄位, 比較常改到的欄位我列出來:
+
+- image tag
+- url.host: 規則是 .$namespace-name.$clustername.internal
+- ingress.hosts.host: external url前面的部分, 可包含dash, 預設是portal-scada, 如果space已經有共用scada, 請改別的名子, 避免url衝突
+
+
+** url 內外部映射範例 **
+- url.host: .scada.slave04.internal
+- ingress.hosts.host: portal-scada
+- 外部
+  - portal-scada-scada-slave04.es.wise-paas.cn
 
 檔名我存成slave04-scada-scada-install.yaml
 
