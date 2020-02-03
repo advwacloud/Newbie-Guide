@@ -174,9 +174,16 @@ CHART_NAME_ON_SERVER請佈scada以外的名子 (共用的scada我取這個名子
 
 
 ```
+## 列出所有佈到k8s上的helm chart
 helm ls
+
+## 列出某一個install完的chart狀態
 helm CHART_NAME status
+
+## 列出所有pod (可透過-n指定namespace, 或是直接在k8s config指定namespace)
 kubectl get pod
+
+## 列出pod的log
 kubectl log POD_NAME
 ```
 
