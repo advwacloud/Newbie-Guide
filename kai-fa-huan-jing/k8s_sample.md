@@ -6,6 +6,7 @@
 ## Part 1 - 如果每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
 
 [.57] /home/wadev3/roy/buildspace/Front-End
+
 [.57] /home/wadev3/roy/buildspace/scada-dataworker
 
 改完code (或pull完), 直接在專案根目錄跑指令, **指令可以一鍵做image+上傳到harbor**:
@@ -168,4 +169,16 @@ affinity: {}
 helm install CHART_NAME_ON_SERVER scada-dev/scada --username username --password pwd --version 1.1.39 -f slave04-scada-scada-install.yaml
 
 CHART_NAME_ON_SERVER請佈scada以外的名子 (共用的scada我取這個名子)
+
+## Part 5 - 下一些指令檢查狀態
+
+
+```
+helm ls
+helm CHART_NAME status
+kubectl get pod
+kubectl log POD_NAME
+```
+
+
 
