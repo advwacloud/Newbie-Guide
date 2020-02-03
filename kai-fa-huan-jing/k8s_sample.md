@@ -159,3 +159,7 @@ affinity: {}
 
 ```
 
+## Part 4 - 佈到k8s上 helm install
+
+helm install scada scada-dev/scada --username username --password pwd --version 1.1.39 -f slave04-scada-scada-install.yaml
+
