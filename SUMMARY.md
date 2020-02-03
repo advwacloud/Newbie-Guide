@@ -8,5 +8,6 @@
 * [開發環境](kai-fa-huan-jing.md)
   * [Node.js](kai-fa-huan-jing/nodejs.md)
   * [kubernetes](kai-fa-huan-jing/kubernetes.md)
+  * [k8s部署範例](kai-fa-huan-jing/k8s_sample.md)
 * [相關資源](xiang-guan-zi-yuan.md)
 
