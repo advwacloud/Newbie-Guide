@@ -9,5 +9,6 @@
   * [Node.js](kai-fa-huan-jing/nodejs.md)
   * [kubernetes](kai-fa-huan-jing/kubernetes.md)
   * [k8s部署範例](kai-fa-huan-jing/k8s_sample.md)
+  * [k8s FAQ](kai-fa-huan-jing/k8s_FAQ.md)
 * [相關資源](xiang-guan-zi-yuan.md)
 
