@@ -42,7 +42,4 @@ setting.xml已經有註解掉的範例, 修改它就好
 
 ![](/assets/bintrayhint3.PNG)
 
-## 
-
-
-Step4. Bintray上推到JCenter, JCenter才是真正的public repo
+## Step4. Bintray上推到JCenter, JCenter才是真正的public repo
