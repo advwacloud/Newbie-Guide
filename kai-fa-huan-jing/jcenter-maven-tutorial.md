@@ -10,6 +10,8 @@ packagename根據JCenter上慣例, 規則為groupId:artifactId, 所以我的pkg 
 ![](/assets/bintrayhint.PNG)
 接著再點擊`Uploading` > `Deploying with Maven`
 ![](/assets/bintrayhint2.PNG)
+
+要特別注意, password不是指login pwd, 是一組token, 要從portal產生,
 可以看到有兩段cfg,上面那一段是要放在全域maven setting.xml的, 下面那段是要放在專案pom.xml的
 
 pom.xml
@@ -29,3 +31,4 @@ pom.xml
 [DEBUG] Reading global settings from xxxx\settings.xml
 [DEBUG] Reading user settings from xxxx\settings.xml
 ```
+setting.xml已經有註解掉的範例, 修改它就好
