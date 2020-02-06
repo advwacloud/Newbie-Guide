@@ -62,3 +62,12 @@ setting.xml已經有註解掉的範例, 修改它就好
 ```
 
 送出之後不是馬上上架, 好像還會再審核, 而且我記得它會要你附上source code, 但有一招可以繞過
+
+- 先建一個空資料夾
+- 放一個README.md (內容隨意)
+- 在相同目錄執行 `jar cvf cloud-sdk-0.0.1-sources.jar *`
+- 然後直接用Bintray poratl上傳檔案
+
+doc好像也要, 到時候再來整理文件
+
+好像只有第一版本需要這樣審核, 後面的版本不用doc跟source也可以
