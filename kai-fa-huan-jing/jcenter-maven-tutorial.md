@@ -5,7 +5,7 @@
 repo name我設成`wisepaas-datahub`
 packagename根據JCenter上慣例, 規則為groupId:artifactId, 所以我的pkg name為`wisepaas.datahub:cloud-sdk`
 
-## Stelp2. 根據Portal auto-gen提示去修改project pom.xml和maven setting.xml
+## Step2. 根據Portal auto-gen提示去修改project pom.xml和maven setting.xml
 在portal建完pkg後, 會順便產生設定讓你複製貼上, 點擊 `Set me up`
 ![](/assets/bintrayhint.PNG)
 接著再點擊`Uploading` > `Deploying with Maven`
@@ -32,3 +32,17 @@ pom.xml
 [DEBUG] Reading user settings from xxxx\settings.xml
 ```
 setting.xml已經有註解掉的範例, 修改它就好
+
+## Step3. mvn deploy推到Bintray上
+
+用VSCODE有按鈕可以直接deploy, 或下指令
+`& mvn deploy -f "project-path\pom.xml"`
+
+接著到Bintray portal看到maven info有出現就算成功將project推到Bintray了
+
+![](/assets/bintrayhint3.PNG)
+
+## 
+
+
+Step4. Bintray上推到JCenter, JCenter才是真正的public repo
