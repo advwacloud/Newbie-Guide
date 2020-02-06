@@ -43,3 +43,22 @@ setting.xml已經有註解掉的範例, 修改它就好
 ![](/assets/bintrayhint3.PNG)
 
 ## Step4. Bintray上推到JCenter, JCenter才是真正的public repo
+
+![](/assets/bintrayhint4.PNG)
+![](/assets/bintrayhint5.PNG)
+
+你很有可能會遇到 `POM project file is not valid.`, 代表你的pom.xml缺少某些欄位
+
+這裡列出幾個常見缺少的, 請檢查一下, 以下範例真的可以填空值
+```
+  <name>scada</name>
+  <description>wisepaas scada sdk</description>
+  <inceptionYear></inceptionYear>
+  <licenses></licenses>
+  <organization></organization>
+  <developers></developers>
+  <contributors></contributors>
+  <scm></scm>
+```
+
+送出之後不是馬上上架, 好像還會再審核, 而且我記得它會要你附上source code, 但有一招可以繞過
