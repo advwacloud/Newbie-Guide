@@ -11,7 +11,7 @@
 1. 修改代碼, 重做image並推上harbor
 - 使用本機helm註冊harbor上的chart repo (只有第一次需要)
 - 如果chart也有修改, 也需要把它推上harbor
-- 去harbor上拿到預設的 chartvalues.yaml內容, 依據不同環境修改內容
+- 去harbor上拿到預設的 chart values.yaml內容, 依據不同環境修改內容
 - 搭配values.yaml, 使用helm install將app部署上k8s
 - 下指令檢查部署狀態
 
