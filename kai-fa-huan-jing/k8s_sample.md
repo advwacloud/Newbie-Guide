@@ -2,6 +2,12 @@
 
 注意: 本篇chart username/password我都挖掉了, 要自己填上去
 
+## Intro
+介紹如何使用helm chart來部署scada到k8s
+  - chart: 包含了k8s各個資源的template, 配合values.yaml將值注入template
+  - helm: 部署/更新/查詢 chart
+  
+
 ## Prerequisite
 - helm v3.x
 - kubectl v1.x
