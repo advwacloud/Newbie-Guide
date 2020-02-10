@@ -20,7 +20,7 @@
 - 搭配values.yaml, 使用helm install將app部署上k8s
 - 下指令檢查部署狀態
 ---
-## Step 1 - 如果每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
+## Step 1 - 每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
 
 [.57] /home/wadev3/roy/buildspace/Front-End
 
