@@ -1,12 +1,10 @@
 # 開發環境 - k8s部署範例
 
-注意: 本篇chart username/password我都挖掉了, 要自己填上去
-
 ## Intro
-介紹如何使用helm chart來部署scada到k8s
+- 介紹如何使用helm chart來部署scada到k8s
   - chart: 包含了k8s各個資源的template, 配合values.yaml將值注入template
   - helm: 部署/更新/查詢 chart
-  
+- 注意: 本篇chart username/password我都挖掉了, 要自己填上去
 
 ## Prerequisite
 - helm v3.x
@@ -20,8 +18,8 @@
 - 去harbor上拿到預設的 chart values.yaml內容, 依據不同環境修改內容
 - 搭配values.yaml, 使用helm install將app部署上k8s
 - 下指令檢查部署狀態
-
-## Part 1 - 如果每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
+---
+## Step 1 - 如果每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
 
 [.57] /home/wadev3/roy/buildspace/Front-End
 
@@ -43,12 +41,15 @@ flag="harbor.arfa.wise-paas.com/scada-dev/scada-dataworker:1.3.31-roydev" \
 && sudo docker push $flag
 ```
 
-
-## Part 2 - 在本機helm註冊chart repo, 此步驟跑過一次就好
+## Step 2 - 在本機helm註冊chart repo, 此步驟跑過一次就好
 
 helm repo add --username harborUser --password harborPwd scada-dev https://harbor.arfa.wise-paas.com/chartrepo/scada-dev
 
-## Part 3 - 準備helm install file
+## Step 3 - 如果chart也有修改, 也需要把它推上harbor
+
+helm push scada-chart/ scada-dev
+
+## Step 4 - 準備helm install file
 
 **標準流程: 去harbor找到要用的chart, 複製values內容, 修改值(ex. datacenter/cluster....)**
 
@@ -193,13 +194,13 @@ affinity: {}
 
 ```
 
-## Part 4 - 佈到k8s上 helm install
+## Step 5 - 佈到k8s上 helm install
 
 helm install CHART_NAME_ON_SERVER scada-dev/scada --username username --password pwd --version 1.1.39 -f slave04-scada-scada-install.yaml
 
 CHART_NAME_ON_SERVER請佈scada以外的名子 (共用的scada我取這個名子)
 
-## Part 5 - 下一些指令檢查狀態
+## Step 6 - 下一些指令檢查狀態
 
 
 ```
