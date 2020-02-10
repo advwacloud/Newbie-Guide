@@ -49,6 +49,7 @@ flag="harbor.arfa.wise-paas.com/scada-dev/scada-dataworker:1.3.31-roydev" \
 helm repo add --username harborUser --password harborPwd scada-dev https://harbor.arfa.wise-paas.com/chartrepo/scada-dev
 
 - scada-dev是helm在本機註冊的別名
+- helm repo ls
 
 ## Step 3 - 如果chart也有修改, 也需要把它推上harbor
 
