@@ -209,7 +209,10 @@ affinity: {}
 
 ## Step 5 - 佈到k8s上 helm install
 
-helm install CHART_NAME_ON_SERVER scada-dev/scada --username username --password pwd --version 1.1.39 -f slave04-scada-scada-install.yaml
+helm install CHART_NAME_ON_SERVER scada-dev/scada --version 1.1.39 -f values.yaml
+
+> helm install scadaroy scada-dev/scada --version 1.1.39 -f slave04-scada-scada-install.yaml
+
 
 CHART_NAME_ON_SERVER請佈scada以外的名子 (共用的scada我取這個名子)
 
