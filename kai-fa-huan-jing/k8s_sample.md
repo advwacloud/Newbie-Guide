@@ -11,6 +11,8 @@
 - helm v3.x
 - kubectl v1.x
 - docker
+- harbor
+  - https://harbor.arfa.wise-paas.com/harbor
 
 ## Flow (6 Steps)
 1. 修改代碼, 重做image並推上harbor
