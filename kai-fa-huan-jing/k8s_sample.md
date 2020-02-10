@@ -67,6 +67,7 @@ helm push scada-chart/ scada-dev
 
 
 ** url 內外部映射範例 **
+
 **example 1**
 - url.host: .scada.slave04.internal
 - ingress.hosts.host: portal-scada
