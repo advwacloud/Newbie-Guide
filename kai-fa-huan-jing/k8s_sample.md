@@ -67,10 +67,16 @@ helm push scada-chart/ scada-dev
 
 
 ** url 內外部映射範例 **
+**example 1**
 - url.host: .scada.slave04.internal
 - ingress.hosts.host: portal-scada
-- 外部
-  - portal-scada-scada-slave04.es.wise-paas.cn
+- external: portal-scada-scada-slave04.es.wise-paas.cn
+
+**example 2**
+- url.host: .scada.slave04.internal
+- ingress.hosts.host: portal-scada-roy
+- external: portal-scada-roy-scada-slave04.es.wise-paas.cn
+
 
 檔名我存成slave04-scada-scada-install.yaml
 
