@@ -70,12 +70,12 @@ helm push scada-chart/ scada-dev
 **example 1**
 - url.host: .scada.slave04.internal
 - ingress.hosts.host: portal-scada
-- external: portal-scada-scada-slave04.es.wise-paas.cn
+- external: https://portal-scada-scada-slave04.es.wise-paas.cn
 
 **example 2**
 - url.host: .scada.slave04.internal
 - ingress.hosts.host: portal-scada-roy
-- external: portal-scada-roy-scada-slave04.es.wise-paas.cn
+- external: https://portal-scada-roy-scada-slave04.es.wise-paas.cn
 
 
 檔名我存成slave04-scada-scada-install.yaml
