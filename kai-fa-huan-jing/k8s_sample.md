@@ -2,6 +2,18 @@
 
 注意: 本篇chart username/password我都挖掉了, 要自己填上去
 
+## Prerequisite
+- helm v3.x
+- kubectl v1.x
+- docker
+
+## Flow (6 Steps)
+1. 修改代碼, 重做image並推上harbor
+- 使用本機helm註冊harbor上的chart repo (只有第一次需要)
+- 如果chart也有修改, 也需要把它推上harbor
+- 去harbor上拿到values.yaml內容, 依據不同環境修改內容
+- 搭配values.yaml, 使用helm install將app部署上k8s
+- 下指令檢查部署狀態
 
 ## Part 1 - 如果每次改code(或commit新東西)都要重新做image上harbor, 我都在.57做 (因為個人電腦防毒不能裝docker)
 
