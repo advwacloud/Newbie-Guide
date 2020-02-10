@@ -183,7 +183,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: portal-scada
+    - host: portal-scada-roy
       paths: ['/']
 
   tls: []
