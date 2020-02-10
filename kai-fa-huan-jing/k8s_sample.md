@@ -1,7 +1,7 @@
 # 開發環境 - k8s部署範例
 
 ## Intro
-- 介紹如何使用helm chart來部署scada到k8s
+- 介紹如何使用helm chart來部署datahub到k8s
   - chart: 包含了k8s各個資源的template(deployment template/service template/ingress template...), 部署時會配合values.yaml將值注入template (values.yaml也會有template)
   - helm: 部署/更新/查詢 chart
   - good: 參數化部屬/一次部署全部相關資源/一次刪除全部相關資源
