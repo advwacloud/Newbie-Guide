@@ -63,7 +63,7 @@ helm push scada-chart/ scada-dev
 
 - image tag
 - url.host: 規則是 .$namespace-name.$clustername.internal
-- ingress.hosts.host: external url前面的部分, 可包含dash, 預設是portal-scada, 如果space已經有共用scada, 請改別的名子, 避免url衝突
+- ingress.hosts.host: external url裡可讓開發者修改的部分, 可包含dash, 預設是portal-scada, 如果space已經有共用scada, 請改別的名子, 避免url衝突
 
 
 ** url 內外部映射範例 **
