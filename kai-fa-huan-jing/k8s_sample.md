@@ -62,7 +62,7 @@ helm push scada-chart/ scada-dev
 但這裡直接提供範本, 再根據需求修改一些欄位, 比較常改到的欄位我列出來:
 
 - image tag
-- database.secretName
+- database.secretName: 多合一的secret
 - url.host: 規則是 .$namespace-name.$clustername.internal
 - ingress.hosts.host: external url裡可讓開發者修改的部分, 可包含dash, 預設是portal-scada, 如果space已經有共用scada, 請改別的名子, 避免url衝突
 
