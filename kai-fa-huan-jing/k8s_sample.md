@@ -1,4 +1,4 @@
-本篇內容將不再更新, 之後只會更新下面這個連結, 因為兩篇的內容是一樣的
+本篇內容將不再更新, 之後只會更新下面這個連結, 因為兩篇的內容是一樣的, 只會維護一份
 https://advwacloud.gitbooks.io/shared-documents/content/datahub-k8s-deploy.html
 
 
