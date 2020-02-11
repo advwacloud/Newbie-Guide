@@ -1,3 +1,7 @@
+本篇內容將不再更新, 之後只會更新下面這個連結, 因為兩篇的內容是一樣的
+https://advwacloud.gitbooks.io/shared-documents/content/datahub-k8s-deploy.html
+
+
 # 開發環境 - k8s部署範例
 
 ## Intro
