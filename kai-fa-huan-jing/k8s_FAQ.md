@@ -7,5 +7,3 @@ kubectl get secret scada-allsvc-secret -o yaml
 ## - 如何使用還沒進版的node module## 
 ## - 別人幫我佈好app了, 但我想要調整資源(例如 cpu ram), 怎麼辦?
 edit deployment
-scale0
-scale1
