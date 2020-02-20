@@ -7,3 +7,6 @@ kubectl get secret scada-allsvc-secret -o yaml
 ## - 如何使用還沒進版的node module## 
 ## - 別人幫我佈好app了, 但我想要調整資源(例如 cpu ram), 怎麼辦?
 edit deployment
+
+## - 別人跟我要"chart 檔案" 怎辦
+helm pull到lock成壓縮檔
