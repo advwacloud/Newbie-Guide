@@ -10,3 +10,10 @@ edit deployment
 
 ## - 別人跟我要"chart 檔案" 怎辦
 helm pull到lock成壓縮檔
+
+## - 舊版的chart不見了, 怎麼辦, 可以重包嗎
+可以, 
+
+1. 先去helm chart build 專案, 找到需要的tag, 開一個branch
+2. 到jenkins pipeline, 改branch, 改成剛剛拉出來的
+3. 手動觸發pipeline, 要填版號
