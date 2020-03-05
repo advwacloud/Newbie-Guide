@@ -71,8 +71,6 @@
 * chart裡會包含worker/portal的image位置與版號
   * 這是透過Step4 CI去version list取得對應的小版號並置換
 
-
-
 ## 
 
 
