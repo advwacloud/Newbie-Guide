@@ -8,6 +8,7 @@
 * [開發環境](kai-fa-huan-jing.md)
   * [Node.js](kai-fa-huan-jing/nodejs.md)
   * [kubernetes](kai-fa-huan-jing/kubernetes.md)
+  * [手動佈署已release之版本](kai-fa-huan-jing/k8s_deploy_released.md)
   * [[開發階段使用] datahub k8s deploy](kai-fa-huan-jing/k8s_datahub_dev.md)
   * [[開發階段使用] notification k8s deploy](kai-fa-huan-jing/k8s_notification_dev.md)
   * [k8s FAQ](kai-fa-huan-jing/k8s_FAQ.md)
