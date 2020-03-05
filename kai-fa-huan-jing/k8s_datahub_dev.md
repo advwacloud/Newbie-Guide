@@ -74,7 +74,7 @@ helm push datahub-chart/ datahub-dev
   * portal/worker的image細節 \(repo/tag\)
   * global.database.secretName
   * * 多合一的secret
-  * url.host
+  * global.url.host
 
     * 規則是 .$namespace-name.$clustername.internal
 
@@ -96,147 +96,7 @@ helm push datahub-chart/ datahub-dev
 * ingress.hosts.host: portal-datahub-roy
 * external: [https://portal-datahub-roy-scada-slave04.es.wise-paas.cn](https://portal-scada-roy-scada-slave04.es.wise-paas.cn)
 
-這份文件裡直接提供範本,
-
-檔名我存成slave04-scada-scada-install.yaml
-
-```
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-portal:
-  name: portal
-  containerPort: 3000
-  replicaCount: 1
-  resources:
-    limits:
-      cpu: 100m
-      memory: 512Mi
-      ephemeral-storage: 500Mi
-    requests:
-      cpu: 100m
-      memory: 256Mi
-      ephemeral-storage: 500Mi
-  image:
-    repository: harbor.arfa.wise-paas.com/datahub-dev/datahub-portal
-    tag: 2.0.0
-    pullPolicy: Always
-
-worker:
-  name: worker
-  replicaCount: 1
-  resources:
-    limits:
-      cpu: 100m
-      memory: 256Mi
-      ephemeral-storage: 500Mi
-    requests:
-      cpu: 100m
-      memory: 256Mi
-      ephemeral-storage: 500Mi
-  image:
-    repository: harbor.arfa.wise-paas.com/datahub/datahub-dataworker
-    tag: 2.0.0
-    pullPolicy: Always
-
-imageCredentials:
-  registry: harbor.arfa.wise-paas.com
-  username: ""
-  password: ""
-
-nameOverride: ""
-fullnameOverride: ""
-
-command:
-args:
-
-# envs is a map to load env
-envs:
-  NODE_ENV: production
-  https_isset: "true"
-  pn: "9806WAC010"
-  pn_quantity: 1
-  lic_interval: 3600000
-  lic_key: ""
-  notification_url: ""
-  tech_url: ""
-  dashboard_url: ""
-  amqp_prefetch: 10
-  MESSAGE_RULE: ""
-
-
-global:
-  database:
-    secretName: datahub-all-in-one-secret
-  url:
-    host: .scada.slave04.internal
-  ensaasApps:
-    apiSso:
-      internalUrl: ""
-      externalUrl: ""
-    apiMg:
-      internalUrl: ""
-      externalUrl: ""
-    apiDccs:
-      internalUrl: ""
-      externalUrl: ""
-    apiLicense:
-      internalUrl: ""
-      externalUrl: ""
-    apiListingsystem:
-      internalUrl: ""
-      externalUrl: "http://api-listingsystem-master.es.wise-paas.cn/v1/datacenter"
-    apiService:
-      internalUrl: ""
-      externalUrl: ""
-    ensaas:
-      datacenterCode: ""
-      internalUrl: ""
-      externalUrl: ""
-
-#livenss and readness
-livenessProbe:
-  enabled: false
-  initialDelaySeconds: 30
-  periodSeconds: 10
-  httpGet:
-    path : /
-
-readinessProbe:
-  enabled: false
-  initialDelaySeconds: 5
-  periodSeconds: 10
-  httpGet:
-    path : /
-
-
-ingress:
-  enabled: true
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: portal-datahub
-      paths: ['/']
-
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
-
-service:
-  type: ClusterIP
-  #targetPort is the pod port
-  targetPort: 3000
-  #port is the service port
-  port: 80
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
-```
+![](/assets/03.png)
 
 ## Step 5 - 佈到k8s上 helm install
 
