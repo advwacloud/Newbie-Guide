@@ -7,7 +7,7 @@
   * [EdgeX](edgex.md)
 * [開發環境](kai-fa-huan-jing.md)
   * [Node.js](kai-fa-huan-jing/nodejs.md)
-  * [如何Release Datahub](kai-fa-huan-jing/howto-release-datahub.md)
+  * [如何Release Datahub](kai-fa-huan-jing/hwoto-release-datahub.md)
   * [kubernetes](kai-fa-huan-jing/kubernetes.md)
   * [手動佈署已release之版本](kai-fa-huan-jing/k8s_deploy_released.md)
   * [\[開發階段使用\] datahub k8s deploy](kai-fa-huan-jing/k8s_datahub_dev.md)
