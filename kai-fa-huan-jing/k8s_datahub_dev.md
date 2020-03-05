@@ -60,7 +60,7 @@ helm repo add --username harborUser --password harborPwd datahub-dev https://har
 * datahub-dev是helm在本機註冊的別名
 * helm repo ls
 
-## Step 3 - 如果chart也有修改, 也需要把它推上harbor
+## Step 3 - 如果chart也有修改, 也需要把它推上harbor \(若無修改請略過\)
 
 helm push datahub-chart/ datahub-dev
 
