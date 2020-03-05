@@ -88,13 +88,13 @@ helm push datahub-chart/ datahub-dev
 
 * url.host: .scada.slave04.internal
 * ingress.hosts.host: portal-datahub
-* external: [https://portal-datahub-scada-slave04.es.wise-paas.cn](https://portal-scada-scada-slave04.es.wise-paas.cn)
+* external: [https://portal-datahub-scada-slave04.es.wise-paas.cn](https://portal-datahub-scada-slave04.es.wise-paas.cn)
 
 **example 2**
 
 * url.host: .scada.slave04.internal
 * ingress.hosts.host: portal-datahub-roy
-* external: [https://portal-datahub-roy-scada-slave04.es.wise-paas.cn](https://portal-scada-roy-scada-slave04.es.wise-paas.cn)
+* external: [https://portal-datahub-roy-scada-slave04.es.wise-paas.cn](https://portal-datahub-roy-scada-slave04.es.wise-paas.cn)
 
 ![](/assets/03.png)
 
