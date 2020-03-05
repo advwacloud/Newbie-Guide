@@ -63,17 +63,17 @@
 
 ## Step6. 和益會發正式Release Note, 並將平台\(窗口孫迪\)提交Chart
 
+* 給孫迪的東西
+  * [https://harbor.arfa.wise-paas.com/harbor/projects/79/helm-charts/datahub/versions/2.0.1](https://harbor.arfa.wise-paas.com/harbor/projects/79/helm-charts/datahub/versions/2.0.1)
 * 提交給孫迪的chart是位於林口的harbor, 注意是datahub project, 而不是datahub-dev project
   * datahub-dev是開發階段用的
   * datahub才是透過CI產生出來放置的地方
 * chart裡會包含worker/portal的image位置與版號
   * 這是透過Step4 CI去version list取得對應的小版號並置換
 
+
+
 ## 
-
-
-
-
 
 
 
