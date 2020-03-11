@@ -34,7 +34,7 @@
 改完code \(或pull完\), 直接在專案根目錄跑指令, **指令可以一鍵做image+上傳到harbor**:
 
 ```
-flag="harbor.arfa.wise-paas.com/notification-dev/portal-notification:1.0.26-dev" \
+flag="harbor.arfa.wise-paas.com/notification-dev/notification-portal:1.0.26-dev" \
 && sudo docker build -t=$flag --no-cache=true -f="./dockerfiles/localbuild.dockerfile" . \
 && sudo docker push $flag
 ```
