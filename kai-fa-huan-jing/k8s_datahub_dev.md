@@ -35,6 +35,12 @@
 
 改完code \(或pull完\), 直接在專案根目錄跑指令, **指令可以一鍵做image+上傳到harbor**:
 
+第一次push前, 一定要先docker login
+
+```
+sudo docker login https://harbor.arfa.wise-paas.com/
+```
+
 **portal**
 
 ```
