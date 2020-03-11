@@ -31,8 +31,6 @@
 
 \[linux\] /home/wadev3/roy/buildspace/notification
 
-
-
 第一次push前, 一定要先docker login
 
 ```
