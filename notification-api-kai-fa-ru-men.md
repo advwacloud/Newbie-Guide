@@ -133,7 +133,7 @@ genSendingObj function裡, 會去處理每一種type預處理的邏輯, line的�
       result = await sendWrapperFunc(options, type, groupId, targetList);
       return result;
 
-在genSendingObj function裡處理完每一種type各自的預處理邏輯後, 會將參數傳入共用的function來做發送
+在genSendingObj function裡處理完每一種type各自的預處理邏輯後, 會將參數傳入共用的sendWrapperFunc function來做發送
 
 * 如果有帶groupId的, 就調用pigeonBreeder.send\(groupId, options\)
   * api/v1.5/Groups/send
