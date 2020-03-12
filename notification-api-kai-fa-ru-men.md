@@ -27,6 +27,10 @@
 
 ### 步驟2. 建立Group
 
+**API: api/v1.5/Groups**
+
+**Request Body**
+
 ```
 {  
    "name":"SayHelloToRoyLine",
