@@ -6,6 +6,8 @@
 
 ## 程式邏輯
 
+用建立一個排程的line group來說明
+
 ### 建立Level
 
 ```
@@ -81,6 +83,8 @@ await Const.pigeonBreeder.start(defineOption.id);
 ### 發送訊息 \(或將待送訊息放進Group Queue\)
 
 #### api/v1.5/Groups/send
+
+### 此api的每個object都會轉化為待送訊息放進Queue裡, Group每十分鐘, 會去Queue裡抓5則訊息來發送
 
 **Request Body**
 
