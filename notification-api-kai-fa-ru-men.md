@@ -8,6 +8,10 @@
 
 ### 步驟1. 建立Level
 
+**API: api/v1.5/Levels**
+
+**Request Body**
+
 ```
 {
   "name": "每十分鐘發五則訊息，每則保存一天",
