@@ -5,6 +5,7 @@
   * [WISE-PaaS SCADA](wise-paas-scada.md)
   * [WISE-PaaS Notification](wise-paas-notification.md)
   * [EdgeX](edgex.md)
+  * [Notification API 開發入門](notification-api-kai-fa-ru-men.md)
 * [開發環境](kai-fa-huan-jing.md)
   * [Node.js](kai-fa-huan-jing/nodejs.md)
   * [kubernetes](kai-fa-huan-jing/kubernetes.md)
@@ -15,6 +16,4 @@
   * [k8s FAQ](kai-fa-huan-jing/k8s_FAQ.md)
   * [Publish maven project to JCenter](kai-fa-huan-jing/jcenter-maven-tutorial.md)
 * [相關資源](xiang-guan-zi-yuan.md)
-
-
 
