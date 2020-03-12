@@ -8,7 +8,7 @@
 
 用建立一個排程的line group來說明發送訊息的代碼
 
-### 建立Level
+### 步驟1. 建立Level
 
 ```
 {
@@ -23,7 +23,7 @@
 
 建立level不看code, 因為就是很單純的建立config而已
 
-### 建立Group
+### 步驟2. 建立Group
 
 ```
 {  
@@ -80,7 +80,7 @@ await Const.pigeonBreeder.start(defineOption.id);
 
 這一步是很關鍵的一步, 抽象來說就是鴿子開始繞圈了, 具體來說則是, **Group每十分鐘會去檢查queue裡有沒有訊息, 有的話一次最多會拿五則訊息出來發送, 這個group的queue裡的訊息只能存活一天**
 
-### 發送訊息 \(或將待送訊息放進Group Queue\)
+### 步驟3. 發送訊息 \(或將待送訊息放進Group Queue\)
 
 #### api/v1.5/Groups/send
 
