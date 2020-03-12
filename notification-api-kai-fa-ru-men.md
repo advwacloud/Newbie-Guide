@@ -78,21 +78,104 @@ await Const.pigeonBreeder.start(defineOption.id);
 
 這一步是很關鍵的一步, 抽象來說就是鴿子開始繞圈了, 具體來說則是, **Group每十分鐘會去檢查queue裡有沒有訊息, 有的話一次最多會拿五則訊息出來發送, 這個group的queue裡的訊息只能存活一天**
 
-發送訊息
+### 發送訊息 \(或將待送訊息放進Group Queue\)
 
-* Group.send
+#### api/v1.5/Groups/send
 
-* Group.test
+**Request Body**
 
-* Group.directsend
+```
+[
+  {
+    "groupId": "string",
+    "subject": "string",
+    "useTemplate": true,
+    "variables": { "name": "Roy" },
+    "sendList": [
+      {
+        "target": "string"
+      }
+    ]
+  }
+]
+```
 
-* genSendingObj
+api會先預處理每一個object
 
-* Const.pigeonBreeder
+* 防呆處理
+* 用groupId去關聯拿到group的細節, 例如template是什麼
 
-  * .send
+```
+sendObjs = sendObjs.map(send => {
+  let groupCfg = groupDaoResp.rows.find(
+    group => group.groupId === send.groupId
+  );
+  if (!send.sendList) {
+    delete send.sendList;
+  }
+  return Object.assign({}, _.cloneDeep(groupCfg), send);
+})
+```
 
-  * .try
+genSendingObj function裡, 會去處理每一種type預處理的邏輯, line的話很單純, 就是在message加上固定的postfix字樣
+
+    case Const.Group.Type.Line:
+      options = {
+        sendList: targetList,
+        useTemplate: useTemplate,
+        variables: useTemplate ? variables : null
+      };
+      if (useTemplate && config.template) {
+        options.template = `${config.template}\n\n${Const.NotifyNote}`;
+      } else if (message) {
+        options.message = `${message}\n\n${Const.NotifyNote}`;
+      }
+      result = await sendWrapperFunc(options, type, groupId, targetList);
+      return result;
+
+在genSendingObj function裡處理完每一種type各自的預處理邏輯後, 會將參數傳入共用的function來做發送
+
+* 如果有帶groupId的, 就調用pigeonBreeder.send\(groupId, options\)
+  * api/v1.5/Groups/send
+* 如果沒帶groupId的, 就調用pigeonBreeder.try\(options\)
+  * api/v1.5/Groups/test
+  * api/v1.5/Groups/directsend
+* send/test/directsend 三支api差別
+  * send可以排程, 有鴿子機制
+  * test/directsend都是立即發送, 無鴿子機制
+  * test可以測試template功能, directsend沒有template功能 
+
+```
+function sendWrapperFunc (options, type, groupId, targetList) {
+  if (groupId) {
+    // for API: POST /Groups/send
+    return Const.pigeonBreeder
+      .send(groupId, options)
+      .then(res => {
+        let processedResp = sendFullfillFunc(res, type, groupId);
+        return processedResp;
+      })
+      .catch(err => {
+        let processedErr = sendRejectFunc(err, targetList, groupId, type);
+        return processedErr;
+      });
+  } else {
+    // for API: POST /Groups/test
+    options.type = type;
+
+    return Const.pigeonBreeder
+      .try(options)
+      .then(res => {
+        let processedResp = sendFullfillFunc(res, type, groupId);
+        return processedResp;
+      })
+      .catch(err => {
+        let processedErr = sendRejectFunc(err, targetList, groupId, type);
+        return processedErr;
+      });
+  }
+}
+```
 
 
 
