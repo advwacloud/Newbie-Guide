@@ -42,6 +42,42 @@
 }
 ```
 
+檢查level是否存在, 若存在就用name去換level id
+
+```
+let results = await levelDao.getLevel({ name: group.levelName || '', instanceId });
+let levelResult = results.rows[0];
+
+// check level existed
+if (!levelResult) {
+  throw Error('no such level');
+}
+// assigned levelId to groupObj
+group.levelId = levelResult.levelId;
+```
+
+將group細節寫入postgresql
+
+```
+ let groupDaoResp = await GroupDao.insertGroup(group, trans);
+```
+
+養鴿人定義鴿子, 並啟動鴿子
+
+```
+let defineOption = {
+  id: groupDaoResp.groupId,
+  type: groupDaoResp.type,
+  interval: groupHelper.getTimeInSec(levelResult.intervalTime, levelResult.unit),
+  batchCount: levelResult.batchCount,
+  expireTime: groupHelper.getTimeInSec(levelResult.expTime, levelResult.expUnit)
+};
+await Const.pigeonBreeder.define(defineOption);
+await Const.pigeonBreeder.start(defineOption.id);
+```
+
+這一步是很關鍵的一步, 抽象來說就是鴿子開始繞圈了, 具體來說則是, **Group每十分鐘會去檢查queue裡有沒有訊息, 有的話一次最多會拿五則訊息出來發送, 這個group的queue裡的訊息只能存活一天**
+
 發送訊息
 
 * Group.send
