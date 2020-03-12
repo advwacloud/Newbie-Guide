@@ -136,10 +136,10 @@ genSendingObj function裡, 會去處理每一種type預處理的邏輯, line的�
 在genSendingObj function裡處理完每一種type各自的預處理邏輯後, 會將參數傳入共用的sendWrapperFunc function來做發送
 
 * 如果有帶groupId的, 就調用pigeonBreeder.send\(groupId, options\)
-  * api/v1.5/Groups/send
+  * api/v1.5/Groups/send 會用到
 * 如果沒帶groupId的, 就調用pigeonBreeder.try\(options\)
-  * api/v1.5/Groups/test
-  * api/v1.5/Groups/directsend
+  * api/v1.5/Groups/test 會用到
+  * api/v1.5/Groups/directsend 會用到
 * send/test/directsend 三支api差別
   * send可以排程, 有鴿子機制
   * test/directsend都是立即發送, 無鴿子機制
