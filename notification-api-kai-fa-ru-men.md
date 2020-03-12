@@ -90,10 +90,10 @@ await Const.pigeonBreeder.start(defineOption.id);
 
 ### 步驟3. 發送訊息 \(或將待送訊息放進Group Queue\)
 
-**API: api/v1.5/Groups/send  
+**API: api/v1.5/Groups/send    
 **
 
-**此api的每個object都會轉化為待送訊息放進Queue裡, Group每十分鐘, 會去Queue裡抓5則訊息來發送**
+**此api的每個object都會轉化為待送訊息放進Queue裡, 鴿子化的Group每十分鐘, 會去Queue裡抓5則訊息來發送**
 
 **Request Body**
 
