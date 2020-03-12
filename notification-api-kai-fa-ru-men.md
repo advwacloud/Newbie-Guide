@@ -25,17 +25,17 @@
 
 ```
 {  
-   "name":"lineGroupTest",
-   "description":"line group",
+   "name":"SayHelloToRoyLine",
+   "description":"line test",
    "type":"line",
-   "levelName":"Critical",
+   "levelName":"每十分鐘發五則訊息，每則保存一天",
    "config":{  
       "template":"Hi {name}!"
    },
    "sendList":[  
       {  
-         "firstName":"Firstname",
-         "lastName":"Lastname",
+         "firstName":"Roy",
+         "lastName":"Chen",
          "target":"fso2ldoS0QfU38ZNSv0w1E3RQj4wCTu8MSeKWe5pNF8"
       }
    ]
