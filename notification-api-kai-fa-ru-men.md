@@ -117,6 +117,10 @@ sendObjs = sendObjs.map(send => {
   }
   return Object.assign({}, _.cloneDeep(groupCfg), send);
 })
+
+...
+...
+return genSendingObj(sendObj);
 ```
 
 genSendingObj function裡, 會去處理每一種type預處理的邏輯, line的話很單純, 就是在message加上固定的postfix字樣
