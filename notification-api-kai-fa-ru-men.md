@@ -6,7 +6,7 @@
 * 核心程式邏輯
 * 特殊形態-Webhook Group
 * Shared Service和Service Broker簡介
-  * 本文只會簡單介紹概念, 細節敬請期待『Notification API - Shared Service』
+  * 本文篇幅不夠只會簡單介紹概念, 細節敬請期待『Notification API - Shared Service』
 
 ---
 
