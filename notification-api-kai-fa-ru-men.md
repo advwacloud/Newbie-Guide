@@ -16,13 +16,13 @@ common下會有跟model json同名的js, 這支程式就是同一類api的主程
 * server下的model json定義的是api的請求與回應為何, 就像這裡的GroupCreateInstance\_\_v1\_5
 
 ![](/assets/10.PNG)  
-test  
-![](/assets/6.PNG)
+跑完npm run generate會建立所有版本的api doc, api doc需要加入版控  
+![](/assets/6.PNG)  
 
-fdfgdfg  
-trst
 
-![](/assets/8.PNG)
+### 多版本與api doc相關工具
+
+### ![](/assets/8.PNG)
 
 多版本機制的進版與phaseout是透過複雜的流程完成, 所以請**務必使用多版本相關工具**來做api進版與淘汰
 
