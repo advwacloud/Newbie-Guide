@@ -315,7 +315,7 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 
 ### Notiication Shared Service整合近況
 
-* notification shared service架構 \(多租戶架構\)已實作完成
+* notification shared service架構 \(多租戶架構\)已實作完成 \(包含db schema\)
 * notification service broker實作完成 \(koa server\)
 * CF shared service測試完成
 * k8s尚未測試, 因為要跟平台確認相關細節, 包含佈署方式/broker spec版本/特殊規範
