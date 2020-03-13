@@ -195,8 +195,6 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 }
 ```
 
-
-
 ## 特殊形態-Webhook Group
 
 * webhook Group不是發送訊息, 而是觸發預先設定的http api
@@ -206,5 +204,47 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 * 即便webhook用途跟其他group不同, 但以操作流程跟排程機制來說, 還是跟其他group相同的
   * 所以代碼的部分還是跟上述核心核心程式邏輯共用
 
+先看下建立webhook group的request body
 
+```
+{
+  "name": "webhookToLine",
+  "description": "line msg",
+  "type": "webhook",
+  "levelName": "Critical",
+  "sendList": [
+    {
+      "target": "send line message",
+      "method": "post",
+      "url": "https://notify-api.line.me/api/notify",
+      "timeout": 10,
+      "headers": {
+          "Content-Type": "X-www-form-urlencoded",
+          "Authorization": "Bearer fso2ldoS0QfU38ZNSv0w1E3RQj4wCTu8MSeKWe5pNF"
+      },
+      "contentType": 2,
+      "body": {
+        "message": "Hi {name}"
+      }
+    }
+  ]
+}
+```
+
+接這來看下api/v1.5/Groups/send, 跟line group一樣會跑到genSendingObj function裡, 但webhook預處理有一點注意
+
+* useTemplate一定是true
+
+```
+    case Const.Group.Type.Webhook:
+      options = {
+        sendList,
+        useTemplate: true,
+        variables: variables || {}
+      };
+      result = await sendWrapperFunc(options, type, groupId, targetList);
+      return result;
+```
+
+所以看懂line的核心程式邏輯, webhook的程式流程也是相通的
 
