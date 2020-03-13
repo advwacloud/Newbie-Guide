@@ -298,3 +298,15 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 
 所以看懂line的核心程式邏輯, webhook的程式流程也是相通的
 
+## Shared Service和Service Broker簡介
+
+### 什麼是Shared Service
+
+
+
+### 什麼是Service Broker
+
+### Notification Shared Service整合近況
+
+
+
