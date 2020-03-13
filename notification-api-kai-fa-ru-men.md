@@ -5,7 +5,8 @@
 * 專案架構與多版本機制
 * 核心程式邏輯
 * 特殊形態-Webhook Group
-* Shared Service和Service Broker簡介 \(篇幅不夠, 只簡介\)
+* Shared Service和Service Broker簡介
+  * 本文只會簡單介紹概念, 細節敬請期待『Notification API - Shared Service』
 
 ---
 
