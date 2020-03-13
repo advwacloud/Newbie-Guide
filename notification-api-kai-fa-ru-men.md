@@ -302,11 +302,16 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 
 ### 什麼是Shared Service
 
-
+* Shared service就是, 所有notification使用者都共用同一個notification server, disk/ram/流量等等是共享的
+* 而我們現notification現行發佈的方式為dedicated service, 或稱standalone app, 就是要用的話要在自己的namespace佈署notification, 流量或資源不共享
 
 ### 什麼是Service Broker
 
-### Notification Shared Service整合近況
+* 平台如cf或k8s都會透過我們自己維護的service broker來建立每個客戶自己的service instance
+* service instance間資訊是隔離的
+* 也就是說, a instance看不到b instance的group list, 但這兩個instance實際是共用同一pg database的
+
+### Notiication Shared Service整合近況
 
 
 
