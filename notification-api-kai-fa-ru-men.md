@@ -302,7 +302,7 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 
 ### 什麼是Shared Service
 
-* Shared service就是, 所有notification使用者都共用同一個notification server, disk/ram/流量/db等等是共享的
+* Shared service就是, 所有notification使用者都共用同一個notification server, disk/ram/流量/db等等是共享的, 租戶不需要自己佈署notification
 * 而我們現notification現行發佈的方式為dedicated service, 或稱standalone app, 就是要用的話要在自己的namespace佈署notification, 流量或資源不共享
 
 ### 什麼是Service Broker
