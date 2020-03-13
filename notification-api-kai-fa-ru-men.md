@@ -6,9 +6,29 @@
 
 多版本機制隔離了不同版本API的實作與介面, 確保代碼修改或phaseout時能維持正確性![](/assets/4.PNG)
 
-common下的model json定義的是同類別的api路徑, server下的model json定義的是api的請求與回應為何
+common下的model json定義的是同類別的api路徑,  
+d  
+rt  
+![](/assets/9.PNG)  
+shit  
+wrwer  
+wer
 
-![](/assets/9.PNG)![](/assets/6.PNG)![](/assets/8.PNG)
+common下會有跟model json同名的js, 這支程式就是同一類api的主程式,
+
+* 例如 POST api/v1.5/Groups被調用時, 會進入Group.remoteMethod\('create'..., 
+* 同一支檔案裡會有Group.create = async \(req, group\), 會實作api邏輯
+* server下的model json定義的是api的請求與回應為何, 就像這裡的GroupCreateInstance\_\_v1\_5
+
+  
+![](/assets/10.PNG)  
+test  
+![](/assets/6.PNG)
+
+fdfgdfg  
+trst
+
+![](/assets/8.PNG)
 
 多版本機制的進版與phaseout是透過複雜的流程完成, 所以請**務必使用多版本相關工具**來做api進版與淘汰
 
