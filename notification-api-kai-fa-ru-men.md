@@ -4,16 +4,16 @@
 
 ## 專案架構與多版本機制
 
-多版本機制隔離了不同版本API的實作與介面, 確保代碼修改或phaseout時能維持正確性
+多版本機制隔離了不同版本API的實作與介面, 確保代碼修改或phaseout時能維持正確性![](/assets/4.PNG)
 
-![](/assets/4.PNG)
+common下的model json定義的是同類別的api路徑, server下的model json定義的是api的請求與回應為何
 
-![](/assets/6.PNG)![](/assets/8.PNG)
+![](/assets/9.PNG)![](/assets/6.PNG)![](/assets/8.PNG)
 
-多版本機制的進版與phaseout是透過複雜的流程完成, 所以請務必使用多版本相關工具來做api進版與淘汰
+多版本機制的進版與phaseout是透過複雜的流程完成, 所以請**務必使用多版本相關工具**來做api進版與淘汰
 
 * createNewVerApi.js
-  * createNewVerApi LATEST_VERSION TARGET\__VERSION
+  * createNewVerApi LATEST\_VERSION TARGET\_\_VERSION
   * createNewVerApi 1.5 2.0
 * gen\_api\_doc.js
   * 不用帶參數, 跑完直接產出所有版本的SWAGGER API DOC
