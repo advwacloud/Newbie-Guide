@@ -197,3 +197,14 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 
 
 
+## 特殊形態-Webhook Group
+
+* webhook Group不是發送訊息, 而是觸發預先設定的http api
+* 例如可以預先設定webhook為line的發訊息api, 
+* 也就是說, 有了webhook group這功能, 可以取代其他訊息服務的group, 
+* 但比較不方便就是了, 因為其他訊息服務的group我們已經把複雜的部份封裝起來, 只需要填必要資訊就好
+* 即便webhook用途跟其他group不同, 但以操作流程跟排程機制來說, 還是跟其他group相同的
+  * 所以代碼的部分還是跟上述核心核心程式邏輯共用
+
+
+
