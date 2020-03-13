@@ -17,8 +17,7 @@ common下會有跟model json同名的js, 這支程式就是同一類api的主程
 
 ![](/assets/10.PNG)  
 跑完npm run generate會建立所有版本的api doc, api doc需要加入版控  
-![](/assets/6.PNG)  
-
+![](/assets/6.PNG)
 
 ### 多版本與api doc相關工具
 
@@ -34,7 +33,7 @@ common下會有跟model json同名的js, 這支程式就是同一類api的主程
 * phaseOutApi.js
   * 不用帶參數, 直接從最舊的版本PHASE OUT, 一次淘汰一板
 
-## 核心程 式邏輯
+## 核心程式邏輯
 
 用建立一個排程的line group來說明發送訊息的代碼  \(共三步驟\)
 
