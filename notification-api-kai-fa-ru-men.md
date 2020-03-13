@@ -4,7 +4,12 @@
 
 ## 專案架構與多版本機制
 
-多版本機制隔離了不同版本API的實作與介面, 確保代碼修改或phaseout時能維持正確性![](/assets/4.PNG)
+多版本機制隔離了不同版本API的實作與介面, 確保代碼修改或phaseout時能維持正確性  
+
+### 專案目錄結構 
+![](/assets/4.PNG)
+
+### Loopback remoteMethod
 
 common下的model json定義的是同類別的api路徑  
 ![](/assets/9.PNG)
@@ -15,7 +20,10 @@ common下會有跟model json同名的js, 這支程式就是同一類api的主程
 * 同一支檔案裡會有Group.create = async \(req, group\), 會實作api邏輯
 * server下的model json定義的是api的請求與回應為何, 就像這裡的GroupCreateInstance\_\_v1\_5
 
-![](/assets/10.PNG)  
+![](/assets/10.PNG)
+
+### 多版本API Doc
+
 跑完npm run generate會建立所有版本的api doc, api doc需要加入版控  
 ![](/assets/6.PNG)
 
