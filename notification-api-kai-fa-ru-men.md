@@ -2,7 +2,25 @@
 
 ---
 
-## 核心程式邏輯
+## 專案架構與多版本機制
+
+多版本機制隔離了不同版本API的實作與介面, 確保代碼修改或phaseout時能維持正確性
+
+![](/assets/4.PNG)
+
+![](/assets/6.PNG)![](/assets/8.PNG)
+
+多版本機制的進版與phaseout是透過複雜的流程完成, 所以請務必使用多版本相關工具來做api進版與淘汰
+
+* createNewVerApi.js
+  * createNewVerApi LATEST_VERSION TARGET\__VERSION
+  * createNewVerApi 1.5 2.0
+* gen\_api\_doc.js
+  * 不用帶參數, 跑完直接產出所有版本的SWAGGER API DOC
+* phaseOutApi.js
+  * 不用帶參數, 直接從最舊的版本PHASE OUT, 一次淘汰一板
+
+## 核心程 式邏輯
 
 用建立一個排程的line group來說明發送訊息的代碼  \(共三步驟\)
 
