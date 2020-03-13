@@ -308,10 +308,17 @@ function sendWrapperFunc (options, type, groupId, targetList) {
 ### 什麼是Service Broker
 
 * 平台如cf或k8s都會透過我們自己維護的service broker來建立每個客戶自己的service instance
+  * cf/k8s都會根據service broker spec去實作相關接口, 但實作細節可能會有差異
+  * [https://github.com/openservicebrokerapi/servicebroker](https://github.com/openservicebrokerapi/servicebroker)
 * service instance間資訊是隔離的
 * 也就是說, a instance看不到b instance的group list, 但這兩個instance實際是共用同一pg database的
 
 ### Notiication Shared Service整合近況
+
+* notification shared service架構 \(多租戶架構\)已實作完成
+* notification service broker實作完成 \(koa server\)
+* CF shared service測試完成
+* k8s尚未測試, 因為要跟平台確認相關細節, 包含佈署方式/broker spec版本/特殊規範
 
 
 
