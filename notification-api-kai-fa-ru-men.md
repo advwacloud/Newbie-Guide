@@ -5,7 +5,7 @@
 * 專案架構與多版本機制
 * 核心程式邏輯
 * 特殊形態-Webhook Group
-* Shared Service和Service Broker
+* Shared Service和Service Broker簡介 \(篇幅不夠, 只簡介\)
 
 ---
 
