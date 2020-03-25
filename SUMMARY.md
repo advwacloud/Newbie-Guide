@@ -2,7 +2,7 @@
 
 * [專案介紹](README.md)
   * [WISE-PaaS](wise-paas.md)
-  * [WISE-PaaS SCADA](wise-paas-scada.md)
+  * [WISE-PaaS DataHub](wise-paas-scada.md)
   * [WISE-PaaS Notification](wise-paas-notification.md)
   * [EdgeX](edgex.md)
   * [Notification API 開發入門](notification-api-kai-fa-ru-men.md)
