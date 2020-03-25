@@ -82,29 +82,47 @@ helm push datahub-chart/ datahub-dev
   * * 多合一的secret
   * global.url.host
 
-    * 規則是 .$namespace-name.$clustername.internal
+    * 規則是 .$namespace-name.$clustername.en.internal
 
   * ingress.hosts.host
 
     * external url裡可讓開發者修改的部分, 可包含dash, 預設是portal-datahub, 如果space已經有, 請改別的名子, 避免url衝突, 例如portal-datahub-dev
+    * 例如我要佈一個我自己測試的datahub portal, 這欄位的值我會換成portal-datahub-roytest
 
 ** url 內外部映射範例 **
 
 **example 1**
 
-* url.host: .scada.slave04.internal
+* url.host: .datahub.eks008.en.internal
 * ingress.hosts.host: portal-datahub
-* external: [https://portal-datahub-scada-slave04.es.wise-paas.cn](https://portal-datahub-scada-slave04.es.wise-paas.cn)
+* external:[https://portal-datahub-datahub-eks008.sa.wise-paas.com](https://portal-datahub-datahub-eks008.sa.wise-paas.com/)
 
 **example 2**
 
-* url.host: .scada.slave04.internal
-* ingress.hosts.host: portal-datahub-roy
-* external: [https://portal-datahub-roy-scada-slave04.es.wise-paas.cn](https://portal-datahub-roy-scada-slave04.es.wise-paas.cn)
+* url.host: .datahub.eks008.en.interna
+* ingress.hosts.host: portal-datahub-roytest
+* external: [https://portal-datahub-roytest-datahub-eks008.sa.wise-paas.com](https://portal-datahub-datahub-eks008.sa.wise-paas.com/)
 
-![](/assets/03.png)
+_**強烈建議**_
+
+因為要自己組外部url太麻煩了, 各個站點的domain也都不同, 如果該站點route-api有work, 可直接call api拿外部url
+
+流程為
+
+* kubectl get ingress datahub
+* 拿到internal url: portal-datahub.ifactory.eks002.en.internal
+* 呼叫 GET [https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/INGRESS-INTERNAL-URL/external](https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-datahub.datahub.ews001.internal/external)
+  * ex. [https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-datahub.ifactory.eks002.en.internal/external](https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-datahub.ifactory.eks002.en.internal/external)
+* 返回結果裡的data就是外部url
+
+![](/assets/03250321.PNG)
 
 ## Step 5 - 佈到k8s上 helm install
+
+**重要請看這裡**
+
+* 你可能會不知道要用datahab或datahub-dev裡的chart, 這裡提供一個簡單的準則
+* 當你開發時沒動到chart, 你可以配合release chart和測試的image, 但如果你測試需要動到chart, 那就自己手動推chart到datahub-dev, 並使用它來測試
 
 helm install CHART\_NAME\_ON\_SERVER datahub-dev/datahub --version 2.0.0 -f values.yaml
 
