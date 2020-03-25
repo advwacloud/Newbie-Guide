@@ -21,6 +21,7 @@
 * [GitBook](https://legacy.gitbook.com/@advwacloud)
 
 * [System Analysis Documents](https://advwacloud.gitbooks.io/system-analysis-design-documents)
+
 * Bug Tracking System: [Redmine](http://aclredmine.advantech.com.tw/redmines/EI-PaaS)
 
 * 專案和工作項目管理工具: [Trello](https://trello.com)
@@ -31,12 +32,13 @@
 
   * [Nuget](https://www.nuget.org/profiles/advwacloud)
 
-  * 
+  * [pypi](https://pypi.org/user/advwacloud/)
+
+  * [JFrog Bintray](https://bintray.com/advwacloud)
+
   * [GitHub](https://github.com/advwacloud)
 
   * [GitLab](http://advgitlab.eastasia.cloudapp.azure.com/)
-
- 
 
 
 
