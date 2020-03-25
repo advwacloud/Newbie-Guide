@@ -15,5 +15,6 @@
   * [\[開發階段使用\] notification k8s deploy](kai-fa-huan-jing/k8s_notification_dev.md)
   * [k8s FAQ](kai-fa-huan-jing/k8s_FAQ.md)
   * [Publish maven project to JCenter](kai-fa-huan-jing/jcenter-maven-tutorial.md)
+  * [WISE-PaaS 4.0 平台應用相關資源](kai-fa-huan-jing/wise-paas-40-ping-tai-ying-yong-xiang-guan-zi-yuan.md)
 * [相關資源](xiang-guan-zi-yuan.md)
 
