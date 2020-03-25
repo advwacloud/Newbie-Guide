@@ -12,7 +12,7 @@
 
 * WISE-PaaS Version Table
 
-  * [WISE-PaaS SCADA](https://docs.google.com/spreadsheets/d/1b021SxYtYdNLH1ihfd8UmVRHBgJo0yRQBzq2a1OSsLc/edit#gid=0)
+  * [WISE-PaaS DataHub](https://docs.google.com/spreadsheets/d/1b021SxYtYdNLH1ihfd8UmVRHBgJo0yRQBzq2a1OSsLc/edit#gid=0)
 
   * [WISE-PaaS Notification](https://docs.google.com/spreadsheets/d/1CUdZCr0nll3G6Dv07YDApXy5_trHfwvJYClblyvtNeY/edit#gid=0)
 
