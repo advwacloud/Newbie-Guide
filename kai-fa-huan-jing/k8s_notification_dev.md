@@ -97,8 +97,8 @@ _**強烈建議**_
 
 * kubectl get ingress notification
 * 拿到internal url: portal-notification.ifactory.eks002.en.internal
-* 呼叫 GET [https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/INGRESS-INTERNAL-URL/external](https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-datahub.datahub.ews001.internal/external)
-  * ex. [https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-notification.ifactory.eks002.en.internal/external](https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-datahub.ifactory.eks002.en.internal/external)
+* 呼叫 GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/INGRESS-INTERNAL-URL/external
+  * ex. https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-notification.ifactory.eks002.en.internal/external
 * 返回結果裡的data就是外部url
 
 ![](/assets/03251617.PNG)
