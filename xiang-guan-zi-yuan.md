@@ -18,13 +18,25 @@
 
 ### 部門資源
 
-* [GitHub](https://github.com/advwacloud)
 * [GitBook](https://legacy.gitbook.com/@advwacloud)
-* [GitLab](http://advgitlab.eastasia.cloudapp.azure.com/)
+
 * [System Analysis Documents](https://advwacloud.gitbooks.io/system-analysis-design-documents)
 * Bug Tracking System: [Redmine](http://aclredmine.advantech.com.tw/redmines/EI-PaaS)
 
 * 專案和工作項目管理工具: [Trello](https://trello.com)
+
+* 外部 SourceCode 管理
+
+  * [npm](https://www.npmjs.com/~advwacloud)
+
+  * [Nuget](https://www.nuget.org/profiles/advwacloud)
+
+  * 
+  * [GitHub](https://github.com/advwacloud)
+
+  * [GitLab](http://advgitlab.eastasia.cloudapp.azure.com/)
+
+ 
 
 
 
