@@ -78,6 +78,7 @@ helm push datahub-chart/ datahub-dev
 * 需要修改的地方有
 
   * portal/worker的image細節 \(repo/tag\)
+    * **開發階段請將pullPolicy改成Always, 因為production預設值為IfNotPresent**
   * global.database.secretName
   * * 多合一的secret
   * global.url.host

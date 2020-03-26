@@ -64,6 +64,7 @@ helm push notification-chart/ notification-dev
 * 需要修改的地方有
 
   * notification的image細節 \(repo/tag\)
+    * **開發階段請將pullPolicy改成Always, 因為production預設值為IfNotPresen**
   * global.database.secretName
   * * 多合一的secret
   * global.url.host
@@ -97,8 +98,8 @@ _**強烈建議**_
 
 * kubectl get ingress notification
 * 拿到internal url: portal-notification.ifactory.eks002.en.internal
-* 呼叫 GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/INGRESS-INTERNAL-URL/external
-  * ex. https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-notification.ifactory.eks002.en.internal/external
+* 呼叫 GET [https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/INGRESS-INTERNAL-URL/external](https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/INGRESS-INTERNAL-URL/external)
+  * ex. [https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-notification.ifactory.eks002.en.internal/external](https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/portal-notification.ifactory.eks002.en.internal/external)
 * 返回結果裡的data就是外部url
 
 ![](/assets/03251617.PNG)
