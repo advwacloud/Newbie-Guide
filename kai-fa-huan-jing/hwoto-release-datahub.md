@@ -1,5 +1,7 @@
 # Release DataHub教學
 
+**Release前請確認相關資訊已經更新, 可以看前一次release 的git log怎麼改**
+
 ---
 
 1. 準備worker/portal release note草稿給和益
