@@ -10,6 +10,7 @@
   * [Node.js](kai-fa-huan-jing/nodejs.md)
   * [kubernetes](kai-fa-huan-jing/kubernetes.md)
   * [如何Release Datahub](kai-fa-huan-jing/hwoto-release-datahub.md)
+  * [如何Release Notification](kai-fa-huan-jing/hwoto-release-notification.md)
   * [手動佈署已release之版本](kai-fa-huan-jing/k8s_deploy_released.md)
   * [\[開發階段使用\] datahub k8s deploy](kai-fa-huan-jing/k8s_datahub_dev.md)
   * [\[開發階段使用\] notification k8s deploy](kai-fa-huan-jing/k8s_notification_dev.md)
@@ -17,4 +18,6 @@
   * [Publish maven project to JCenter](kai-fa-huan-jing/jcenter-maven-tutorial.md)
   * [WISE-PaaS 4.0 平台應用相關資源](kai-fa-huan-jing/wise-paas-40-ping-tai-ying-yong-xiang-guan-zi-yuan.md)
 * [相關資源](xiang-guan-zi-yuan.md)
+
+
 
