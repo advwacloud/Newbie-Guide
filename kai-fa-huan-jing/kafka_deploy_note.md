@@ -76,4 +76,8 @@ serviceName="Kafka"
 
 ![](/assets/0410_07.png)
 
+接著就可以測試producer/consumer了
+
+![](/assets/0410_08.png)
+
 
