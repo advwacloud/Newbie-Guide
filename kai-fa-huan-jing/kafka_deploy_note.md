@@ -36,7 +36,7 @@ $ ./deploy.sh kafkatest
 
 平台開的測試環境IP是172.21.92.173, 下kubectl get all找到kafkatest-kafka-manager (NodePort)的port為32556, 接著在瀏覽器訪問172.21.92.173:32556
 
-密碼的話請下指令: helm status kafka
+密碼的話請下指令: helm status kafkatest, 再用提示的指令拿到帳密
 
 ```
 Kafka Web Manager authentication:
@@ -46,3 +46,34 @@ password:
 kubectl get secret kafkatest-kafka-manager -n kafka -o jsonpath='{.data.basicAuthPassword}' | base64 -d
 
 ```
+
+登入portal後, 創個topic
+![](/assets/0410_05.png)
+
+接著開啟Conductor
+
+要先組一個url, 規則為`$KFK_BROKER_POD_NAME.$KFK_BROKER_HEADLESS_SVC_NAME.$NAMESPACE.svc.cluster.local`
+
+以這篇範例來說, 就是
+
+kafkatest-0.kafkatest-kafka-headless.kafka.svc.cluster.local
+
+接著去你電腦的hosts file加上一行
+
+`172.21.92.173 kafkatest-0.kafkatest-kafka-headless.kafka.svc.cluster.local`
+
+![](/assets/0410_06.png)
+
+
+接著在Conductor設定zk和kfk broker, external ip請下kubectl get all去找, Additional Properties用下面這段
+
+```
+security.protocol=SASL_PLAINTEXT
+sasl.mechanism=SCRAM-SHA-256
+sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret";
+serviceName="Kafka"
+```
+
+![](/assets/0410_07.png)
+
+
