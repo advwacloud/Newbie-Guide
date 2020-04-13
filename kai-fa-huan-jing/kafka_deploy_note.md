@@ -80,4 +80,21 @@ serviceName="Kafka"
 
 ![](/assets/0410_08.png)
 
+## Prometheus Test
+
+要測Prometheus要先請平台的人在站點安裝Prometheus
+
+Prometheus會自動找尋服務, 所以不須其他設定, 就可以看到像下面這張圖
+![](/assets/041301.PNG)
+
+接著可以下查詢語法, 取出各項量測指標, 這裡參考Kenny投影片, 查詢特定topic的每秒訊息量統計
+`sum(kafka_server_brokertopicmetrics_messagesinpersec_count{job="kafkatest"}) by (topic)`
+
+![](/assets/041302.PNG)
+
+![](/assets/041303.PNG)
+
+
+
+
 
