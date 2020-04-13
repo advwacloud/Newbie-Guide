@@ -7,8 +7,8 @@
 
 本地k8s config的namespace指到kafka
 
-去harbor抓kafka chart, 然後解壓縮
-https://harbor.arfa.wise-paas.com/harbor/projects/24/helm-charts/kafka/versions/1.1.5
+去harbor抓kafka chart, 然後解壓縮 (`tar xvf FileName.tar`)
+https://harbor.arfa.wise-paas.com/harbor/projects/68/helm-charts/kafka/versions/1.1.5
 
 編輯deploy.sh, 下圖圈紅線的地方是已經修改過的
 ![](/assets/02.png)
