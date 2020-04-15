@@ -83,7 +83,7 @@
   * MongoDB GUI 工具: [Robo mongo \(Robo 3T\)](https://robomongo.org/download)
 
     * Local測試環境
-      * host: PC031206
+      * host: PC0030403
       * port: 27017
       * username: wisepaas
       * password: wisepaas
@@ -92,7 +92,7 @@
   * PostgreSQL GUI 工具: [PgAdmin 4](https://www.pgadmin.org/download/)
 
     * Local測試環境
-      * host: PC031206
+      * host: PC030403
       * port: 5432
       * username: postgres
       * password: admin
