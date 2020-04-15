@@ -29,7 +29,14 @@
           "standard.semistandard": true,
           "standard.autoFixOnSave": true,
           "editor.formatOnSave": true,
+          "[javascript]": {
+            "editor.formatOnSave": false,
+          },
           "vetur.format.defaultFormatterOptions": {
+            "prettier": {
+              "singleQuote": true,
+              "semi": true
+            },
             "eslint.options": {
               "plugins": [
                 "html"
