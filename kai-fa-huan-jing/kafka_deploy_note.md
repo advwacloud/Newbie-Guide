@@ -103,13 +103,13 @@ Prometheus會自動找尋服務, 所以不須其他設定, 就可以看到像下
 ### 進去container
 
 ```
-kubectl exec -it roy-kafka-0 --container kafka-broker -- /bin/bash
+kubectl exec -it kafkatest-0 --container kafka-broker -- /bin/bash
 ```
 
 ### 把container的kafka-run-class複製到本地
 
 ```
-kubectl cp roy-kafka-0:usr/bin/kafka-run-class kafka-run-class --container kafka-broker
+kubectl cp kafkatest-0:usr/bin/kafka-run-class kafka-run-class --container kafka-broker
 ```
 
 ### 把本地的修改完的kafka-run-class複製回container
@@ -123,7 +123,7 @@ kubectl cp roy-kafka-0:usr/bin/kafka-run-class kafka-run-class --container kafka
 ```
 
 ```
-kubectl cp kafka-run-class roy-kafka-0:usr/bin/kafka-run-class --container kafka-broker
+kubectl cp kafka-run-class kafkatest-0:usr/bin/kafka-run-class --container kafka-broker
 
 ## in container 
 chmod +x /usr/bin/kafka-run-class
@@ -132,26 +132,26 @@ chmod +x /usr/bin/kafka-run-class
 ### 把producer.properties複製進container
 
 ```
-kubectl cp producer.properties roy-kafka-0:etc/kafka/producer.properties --container kafka-broker
+kubectl cp producer.properties kafkatest-0:etc/kafka/producer.properties --container kafka-broker
 ```
 
 ### 把consumer.properties複製進container
 
 ```
-kubectl cp consumer.properties roy-kafka-0:etc/kafka/consumer.properties --container kafka-broker
+kubectl cp consumer.properties kafkatest-0:etc/kafka/consumer.properties --container kafka-broker
 ```
 
 ### 把kafka_client_jaas.conf複製進container
 
 ```
-kubectl cp kafka_client_jaas.conf roy-kafka-0:etc/kafka/kafka_client_jaas.conf --container kafka-broker
+kubectl cp kafka_client_jaas.conf kafkatest-0:etc/kafka/kafka_client_jaas.conf --container kafka-broker
 ```
 
 ### producer發送
 
 ```
 export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf" \
-&& ./usr/bin/kafka-console-producer --broker-list 10.233.11.67:9092 --topic roy1 --producer.config /etc/kafka/producer.properties
+&& ./usr/bin/kafka-console-producer --broker-list 10.233.23.176:9092 --topic roy02 --producer.config /etc/kafka/producer.properties
 ```
 
 ### consumer接收
