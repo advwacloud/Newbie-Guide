@@ -96,6 +96,79 @@ Prometheus會自動找尋服務, 所以不須其他設定, 就可以看到像下
 
 ![](/assets/041303.PNG)
 
+## 使用Kafka Broker Container內建工具
+
+這裡是補充Kenny投影片裡面`/usr/bin/kafka-console-producer` 跟 `/usr/bin/kafka-console-consumer` 操作細節
+
+### 進去container
+
+```
+kubectl exec -it roy-kafka-0 --container kafka-broker -- /bin/bash
+```
+
+### 把container的kafka-run-class複製到本地
+
+```
+kubectl cp roy-kafka-0:usr/bin/kafka-run-class kafka-run-class --container kafka-broker
+```
+
+### 把本地的修改完的kafka-run-class複製回container
+
+把kafka-run-class下面這三行註解掉
+```
+# JMX port to use
+#if [  $JMX_PORT ]; then
+#  KAFKA_JMX_OPTS="$KAFKA_JMX_OPTS -Dcom.sun.management.jmxremote.port=$JMX_PORT "
+#fi
+```
+
+```
+kubectl cp kafka-run-class roy-kafka-0:usr/bin/kafka-run-class --container kafka-broker
+
+## in container 
+chmod +x /usr/bin/kafka-run-class
+```
+
+### 把producer.properties複製進container
+
+```
+kubectl cp producer.properties roy-kafka-0:etc/kafka/producer.properties --container kafka-broker
+```
+
+### 把consumer.properties複製進container
+
+```
+kubectl cp consumer.properties roy-kafka-0:etc/kafka/consumer.properties --container kafka-broker
+```
+
+### 把kafka_client_jaas.conf複製進container
+
+```
+kubectl cp kafka_client_jaas.conf roy-kafka-0:etc/kafka/kafka_client_jaas.conf --container kafka-broker
+```
+
+### producer發送
+
+```
+export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf" \
+&& ./usr/bin/kafka-console-producer --broker-list 10.233.11.67:9092 --topic roy1 --producer.config /etc/kafka/producer.properties
+```
+
+### consumer接收
+
+```
+export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf" \
+&& ./usr/bin/kafka-console-consumer --bootstrap-server 10.233.11.67:9092 --topic roy1 --from-beginning --consumer.config /etc/kafka/consumer.properties
+```
+
+### 補充 - 壓力測試工具
+
+```
+export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf" \
+&& ./usr/bin/kafka-producer-perf-test --num-records 10000000 --topic roy1 --throughput 100000 --record-size 100 --producer-props bootstrap.servers=10.233.11.67:9092 --producer.config /etc/kafka/producer.properties 
+```
+
+
 
 
 
