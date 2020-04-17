@@ -65,7 +65,7 @@
 
     * [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 
-    * [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+    * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
     * [Hyper JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=t7yang.hyper-javascript-snippets)
 
