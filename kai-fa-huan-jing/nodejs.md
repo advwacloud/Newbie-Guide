@@ -35,10 +35,6 @@
           "javascript.validate.enable": false,
           "standard.semistandard": true,
           "standard.autoFixOnSave": true,
-          "editor.formatOnSave": true,
-          "[javascript]": {
-            "editor.formatOnSave": false,
-          },
           "vetur.format.defaultFormatterOptions": {
             "prettier": {
               "singleQuote": true,
@@ -53,7 +49,18 @@
           "files.associations": {
             "*.vue": "vue"
           },
-          "window.zoomLevel": 1
+          "window.zoomLevel": 1,
+          // eslint setting for vue below
+          "javascript.updateImportsOnFileMove.enabled": "always",
+          "go.delveConfig": {},
+          "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+          },
+          "eslint.validate": [
+            "javascript",
+            "javascriptreact",
+            "vue"
+          ]
         }
         ```
 
