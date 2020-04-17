@@ -52,7 +52,6 @@
           "window.zoomLevel": 1,
           // eslint setting for vue below
           "javascript.updateImportsOnFileMove.enabled": "always",
-          "go.delveConfig": {},
           "editor.codeActionsOnSave": {
             "source.fixAll.eslint": true
           },
