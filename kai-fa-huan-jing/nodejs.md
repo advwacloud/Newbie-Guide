@@ -16,7 +16,14 @@
         ```
         npm i -g semistandard@13.0.1    // avoid prefer-const rule
         npm i -g eslint-plugin-html
-        npm i -g eslint
+        // for vue eslint below
+        npm i -g eslint@5.16.0 //eslint要裝v5.16.0才能在global找到plugin套件
+        npm i -g eslint-plugin-vue@5.2.3 //與eslint v5.16.0相依
+        npm i -g eslint-config-standard@14.1.1
+        npm i -g eslint-plugin-import@2.20.2
+        npm i -g eslint-plugin-node@11.1.0
+        npm i -g eslint-plugin-promise@4.2.1
+        npm i -g eslint-plugin-standard@4.0.1
         ```
 
         * 修改VSCode的User settings.json
@@ -51,6 +58,8 @@
         ```
 
     * [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+
+    * [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
     * [Hyper JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=t7yang.hyper-javascript-snippets)
 
